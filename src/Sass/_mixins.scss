@@ -1,0 +1,35 @@
+@mixin flex($justifycontent,$alignitems,$gap,$direction) {
+    display: flex;
+    justify-content: $justifycontent;
+    align-items: $alignitems;
+    gap: $gap;
+    flex-direction: $direction;
+}
+@mixin font($fontfamily,$fontsize) {
+    font-family: $fontfamily;
+    font-weight: bold;
+    font-size: $fontsize;
+}
+@mixin textdeco {
+    color: white;
+    text-shadow : 2px 2px 5px black;
+    text-align: start;
+}
+@mixin border($bordersize,$borderweight,$bordercolor,$borderradius) {
+    border: $bordersize $borderweight $bordercolor;
+    border-radius: $borderradius;
+}
+@mixin btnAnimation() {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: $blue;
+    @include border(1px,solid,$blue,10px);
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}

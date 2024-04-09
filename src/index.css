@@ -1,4 +1,164 @@
 @import "./index.css";
+main {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.welcomehero {
+  background-image: linear-gradient(#3A4750, #BE3144), url(../../assets/download.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  z-index: -1;
+  filter: drop-shadow(8px 8px 10px gray);
+}
+.welcomehero .welcomehero-text {
+  padding-top: 5rem;
+  max-width: 60%;
+  margin: auto;
+}
+.welcomehero .welcomehero-text h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2.125rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  text-align: start;
+  text-align: center;
+}
+.welcomehero .welcomehero-text p {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  text-align: start;
+  margin-top: 2rem;
+  text-align: center;
+}
+.welcomehero .welcomehero-text .btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+.welcomehero .welcomehero-text .btn-container .btn {
+  background: transparent;
+  padding: 1rem;
+  cursor: pointer;
+  border: 5px solid white;
+  border-radius: 10px;
+  color: white;
+  position: relative;
+  transition: color 0.4s linear;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1.125rem;
+  width: 25rem;
+}
+.welcomehero .welcomehero-text .btn-container .btn:hover {
+  color: #D3D6DB;
+  text-shadow: 2px 2px 5px #3A4750;
+}
+.welcomehero .welcomehero-text .btn-container .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #6495ED;
+  border: 1px solid #6495ED;
+  border-radius: 10px;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  border-radius: 0px;
+}
+.welcomehero .welcomehero-text .btn-container .welcomehero-btn::before {
+  transform: scaleX(0);
+}
+.welcomehero .welcomehero-text .btn-container .welcomehero-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  padding-inline: 5rem;
+  padding-block: 2rem;
+  box-shadow: 2px 2px 5px;
+}
+.navbar img {
+  width: 30%;
+}
+.navbar .buttons {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7rem;
+  flex-direction: row;
+}
+.navbar .buttons li {
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+.navbar .buttons .loginsignup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+}
+.navbar .buttons .loginbutton {
+  padding-inline: 1.5rem;
+  background-color: #BE3144;
+  color: #3A4750;
+  box-shadow: 2px 2px 5px;
+  transition: 1s;
+}
+.navbar .buttons .loginbutton:hover {
+  background-color: #3A4750;
+  color: #D3D6DB;
+  box-shadow: 2px 2px 5px #3A4750;
+}
+.navbar .buttons .signupbutton {
+  padding-inline: 1.2rem;
+  background-color: #3A4750;
+  color: #D3D6DB;
+  box-shadow: 2px 2px 5px black;
+  transition: 1s;
+}
+.navbar .buttons .signupbutton:hover {
+  background-color: #BE3144;
+  color: #3A4750;
+  box-shadow: 2px 2px 5px #3A4750;
+}
+.navbar .buttons .premiumbutton {
+  padding-inline: 1rem;
+  background-color: #6495ED;
+  color: #303841;
+  box-shadow: 2px 2px 5px;
+  transition: 1s;
+}
+.navbar .buttons .premiumbutton:hover {
+  background-color: #BE3144;
+  color: #3A4750;
+  box-shadow: 2px 2px 5px #3A4750;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,4 +167,8 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: #D3D6DB;
 }/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,59 @@
+main  {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+.welcomehero {
+    background-image: linear-gradient($firstgray,$red), url(../../assets/download.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    z-index: -1;
+    filter: drop-shadow(8px 8px 10px gray);
+    .welcomehero-text {
+        padding-top: 5rem;
+        max-width: 60%;
+        margin: auto;
+        h1 {
+            @include font(($primaryFont,$backupFont),2.125rem);
+            @include textdeco();
+            text-align: center
+        }
+        p {
+            @include font(($primaryFont,$backupFont),1.5rem);
+            @include textdeco();
+            margin-top: 2rem;
+            text-align: center
+        }
+        .btn-container {
+            @include flex(space-evenly,center,10px,row); 
+            margin-top: 2rem;
+            .btn {
+                background: transparent;
+                padding: 1rem;
+                cursor: pointer;
+                @include border(5px,solid,white,10px);
+                color: white;
+                position: relative;
+                transition: color 0.4s linear;
+                @include font(($secondaryFont,$backupFont),1.125rem);
+                width: 25rem;
+            }
+            .btn:hover {
+                color: $white;
+                text-shadow: 2px 2px 5px $firstgray;
+            }
+            .btn::before {
+                @include btnAnimation();
+                border-radius: 0px;
+            }
+            .welcomehero-btn::before {
+                transform: scaleX(0);
+            }
+            .welcomehero-btn:hover::before {
+                transform: scaleX(1);
+            }
+        }
+    }
+}

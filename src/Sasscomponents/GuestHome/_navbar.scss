@@ -1,0 +1,60 @@
+.navbar {
+    @include flex(space-between,center,2rem,row);
+    padding-inline: 5rem;
+    padding-block: 2rem;
+    box-shadow: 2px 2px 5px;
+    img {
+        width: 30%;
+    }
+    .buttons {
+        list-style: none;
+        @include flex(space-between,center,7rem,row);
+        li {
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-family: 'Cairo', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .loginsignup {
+            @include flex(center,center,2rem,row);
+        }
+        .loginbutton {
+            padding-inline: 1.5rem;
+            background-color: $red;
+            color: $firstgray;
+            box-shadow: 2px 2px 5px;
+            transition: 1s;
+            &:hover {
+                background-color: $firstgray;
+                color: $white;
+                box-shadow: 2px 2px 5px $firstgray;
+            }
+        }
+        .signupbutton {
+            padding-inline: 1.2rem;
+            background-color: $firstgray;
+            color: $white;
+            box-shadow: 2px 2px 5px black;
+            transition: 1s;
+            &:hover {
+                background-color: $red;
+                color: $firstgray;
+                box-shadow: 2px 2px 5px $firstgray;
+            }
+        }
+        .premiumbutton {
+            padding-inline: 1rem;
+            background-color: #6495ED;
+            color: $secondgray;
+            box-shadow: 2px 2px 5px;
+            transition: 1s;
+            &:hover {
+                background-color: $red;
+                color: $firstgray;
+                box-shadow: 2px 2px 5px $firstgray;
+            }
+        }
+
+    }
+}

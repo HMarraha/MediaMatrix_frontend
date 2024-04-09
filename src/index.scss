@@ -1,4 +1,9 @@
+@import "./Sass/variables";
+@import "./Sass/mixins";
+@import "./Sasscomponents/GuestHome/hero";
 @import "./index.css";
+@import "./Sasscomponents/GuestHome/navbar";
+
 
 * {
     padding: 0;
@@ -9,4 +14,8 @@
 html {
     scroll-behavior: smooth;
 }
+body {
+    background-color: #D3D6DB;
+}
+
 
