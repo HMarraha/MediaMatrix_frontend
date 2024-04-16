@@ -1,0 +1,33 @@
+.footer-container {
+    margin-top: 20rem;
+    max-width: 100%;
+    text-align: center;
+    background: linear-gradient($firstgray,$red);
+    width: 100%;
+    .content-container {
+        @include flex(center,center,10rem,row);
+        padding: 6rem;
+        h1 {
+            @include font(($primaryFont,$backupFont),2rem);
+            color: white;
+        }
+        .container-2 {
+            .contact {
+                @include flex(center,center,2rem,row);
+                .contacticon {
+                    transition: 150ms ease-in;
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        @include flex(center,center,1rem,row);
+        h1 {
+            @include font(($primaryFont,$backupFont),1.5rem);
+            color: white;
+        }
+    }
+}

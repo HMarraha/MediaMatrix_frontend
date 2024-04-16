@@ -1,4 +1,169 @@
 @import "./index.css";
+.footer-container {
+  margin-top: 20rem;
+  max-width: 100%;
+  text-align: center;
+  background: linear-gradient(#3A4750, #BE3144);
+  width: 100%;
+}
+.footer-container .content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  flex-direction: row;
+  padding: 6rem;
+}
+.footer-container .content-container h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+}
+.footer-container .content-container .container-2 .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+}
+.footer-container .content-container .container-2 .contact .contacticon {
+  transition: 150ms ease-in;
+}
+.footer-container .content-container .container-2 .contact .contacticon:hover {
+  transform: translateY(-5px);
+}
+.footer-container .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+.footer-container .copyright h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.join {
+  position: relative;
+  margin-top: 5rem;
+}
+.join .backgroundimg {
+  width: 100%;
+  height: 40rem;
+  z-index: -1;
+  position: absolute;
+  opacity: 0.9;
+  filter: drop-shadow(8px 8px 10px gray);
+}
+.join h1 {
+  padding-top: 5rem;
+  padding-inline: 5rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 5rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.join .joinflex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+}
+.join .joinflex p {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.join .joinflex button {
+  padding-inline: 2rem;
+  padding-block: 0.7rem;
+  margin-top: 2rem;
+  background-color: #BE3144;
+  color: #D3D6DB;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.latestcontainer {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+.latestcontainer .headline {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+.latestcontainer .headline .redbar {
+  padding-block: 2rem;
+  padding-inline: 0.2rem;
+  background-color: #BE3144;
+}
+.latestcontainer .headline h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.latestcontainer .cards {
+  background-image: url("../../assets/download.jpg");
+  background-repeat: repeat-x;
+  overflow-x: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-direction: row;
+}
+.latestcontainer .cards .moviecards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-direction: column;
+  margin-top: 1rem;
+  transform: translateX(60rem);
+  text-align: center;
+}
+.latestcontainer .cards .moviecards img {
+  width: 150px;
+  border-radius: 15px;
+  transition: 1s;
+}
+.latestcontainer .cards .moviecards img:hover {
+  transform: scale(1.1);
+}
+.latestcontainer .cards .moviecards .movietitle {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.latestcontainer .cards .moviecards .release {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
 main {
   width: 70%;
   margin: auto;
@@ -12,17 +177,19 @@ main {
   min-height: 100vh;
   width: 100%;
   z-index: -1;
+  position: relative;
   filter: drop-shadow(8px 8px 10px gray);
 }
 .welcomehero .welcomehero-text {
-  padding-top: 5rem;
+  padding-top: 10rem;
   max-width: 60%;
   margin: auto;
+  z-index: 999;
 }
 .welcomehero .welcomehero-text h1 {
   font-family: "Cairo", sans-serif;
   font-weight: bold;
-  font-size: 2.125rem;
+  font-size: 2.5rem;
   color: white;
   text-shadow: 2px 2px 5px black;
   text-align: start;
@@ -38,53 +205,22 @@ main {
   margin-top: 2rem;
   text-align: center;
 }
-.welcomehero .welcomehero-text .btn-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 10px;
-  flex-direction: row;
-  margin-top: 2rem;
-}
-.welcomehero .welcomehero-text .btn-container .btn {
-  background: transparent;
-  padding: 1rem;
-  cursor: pointer;
-  border: 5px solid white;
-  border-radius: 10px;
-  color: white;
-  position: relative;
-  transition: color 0.4s linear;
-  font-family: "Karla", sans-serif;
-  font-weight: bold;
-  font-size: 1.125rem;
-  width: 25rem;
-}
-.welcomehero .welcomehero-text .btn-container .btn:hover {
-  color: #D3D6DB;
-  text-shadow: 2px 2px 5px #3A4750;
-}
-.welcomehero .welcomehero-text .btn-container .btn::before {
-  content: "";
+.welcomehero .heroposters {
   position: absolute;
-  top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  opacity: 0.5;
   z-index: -1;
-  background-color: #6495ED;
-  border: 1px solid #6495ED;
-  border-radius: 10px;
-  transition: transform 0.5s;
-  transform-origin: 0 0;
-  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-  border-radius: 0px;
+  padding: 0.1rem;
 }
-.welcomehero .welcomehero-text .btn-container .welcomehero-btn::before {
-  transform: scaleX(0);
-}
-.welcomehero .welcomehero-text .btn-container .welcomehero-btn:hover::before {
-  transform: scaleX(1);
+.welcomehero .heroposters img {
+  width: 100px;
 }
 
 .navbar {
@@ -99,6 +235,7 @@ main {
 }
 .navbar img {
   width: 30%;
+  cursor: pointer;
 }
 .navbar .buttons {
   list-style: none;
