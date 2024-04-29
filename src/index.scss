@@ -1,5 +1,14 @@
 @import "./Sass/variables";
 @import "./Sass/mixins";
+@import "./Sasscomponents/UserLayout/welcome";
+@import "./Sasscomponents/GuestHome/signup";
+@import "./Sasscomponents/GuestHome/login";
+@import "./Sasscomponents//UserLayout/moviedescription";
+@import "./Sasscomponents/UserLayout/search";
+@import "./Sasscomponents/UserLayout/faq";
+@import "./Sasscomponents/UserLayout/welcomemoviescards";
+@import "./Sasscomponents/UserLayout/welcomehero";
+@import "./Sasscomponents/UserLayout/welcomenavbar";
 @import "./Sasscomponents/footer";
 @import "./Sasscomponents/GuestHome/join";
 @import "./Sasscomponents/GuestHome/latest";

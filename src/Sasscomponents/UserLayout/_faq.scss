@@ -1,0 +1,34 @@
+.faq-container {
+    @include font(($primaryFont,$backupFont),3rem);
+    max-width: 70%;
+    margin: 2rem auto;
+    text-align: center;
+    filter: drop-shadow(8px 8px 10px gray);
+    .question-container {
+        @include border(1px,solid,gray,10px);
+        padding-block: 2rem;
+        margin-top: 2rem;
+        box-shadow: 8px 8px 10px gray;
+        .question {
+            @include flex(space-between,center,4rem,row);
+            @include font(($secondaryFont,$backupFont),1.5rem);
+            padding-inline: 2rem;
+        }
+        .answer {
+            @include font(($secondaryFont,$backupFont),1.25rem);
+            margin-top: 1.75rem;
+            padding-inline: 2rem;
+            text-align: start;
+            transition: all 1s cubic-bezier(1,0,1,0);
+            display: block;
+        }
+        .noanswer {
+            @include font(($secondaryFont,$backupFont),1.25rem);
+            margin-top: 1.75rem;
+            padding-inline: 2rem;
+            text-align: start;
+            transition: all 1s cubic-bezier(0,1,0,1);
+            display: none;
+        }
+    }
+}

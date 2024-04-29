@@ -5,20 +5,19 @@ import tmbdClient from '../../Axios/tmdb'
 import Latest from './GuestHomeComponents/Latest'
 import Join from './GuestHomeComponents/Join'
 import Footer from './GuestHomeComponents/Footer'
+import useFetch from '../../Axios/useFetch'
+import Upcoming from './GuestHomeComponents/Upcoming'
 
 const GuestHome = () => {
   const [heroMovie, setHeroMovie] = useState([])
   const [nowPlayingMovies, setNowPlayingMovies] = useState([])
   const [nowPlayingTvSeries, setNowPlayingTvSeries] = useState([])
-  const fetchUrl = async (url,setState) => {
-    const response = await tmbdClient.get(url)
-    const results = response.data.results
-    setState(results)
-  }
+  const [upcomingMovies,setUpcomingMovies] = useState([])
   useEffect(()=> {
-    fetchUrl('/movie/top_rated?language=en-US&page=1',setHeroMovie)
-    fetchUrl('/movie/now_playing?language=en-US&page=1',setNowPlayingMovies)
-    fetchUrl('/tv/on_the_air?language=en-US&page=1',setNowPlayingTvSeries)
+    useFetch('/movie/top_rated?language=en-US&page=1',setHeroMovie)
+    useFetch('/movie/now_playing?language=en-US&page=1',setNowPlayingMovies)
+    useFetch('/tv/on_the_air?language=en-US&page=1',setNowPlayingTvSeries)
+    useFetch('/movie/upcoming?language=en-US&page=1',setUpcomingMovies)
   },[])
   return (
     <>
@@ -26,6 +25,7 @@ const GuestHome = () => {
      <Hero heroMovie={heroMovie}/>
      <Latest nowPlayingMovies={nowPlayingMovies} nowPlayingTvSeries={nowPlayingTvSeries}/>
      <Join/>
+     <Upcoming upcomingMovies={upcomingMovies}/>
      <Footer/>
     </>
   )

@@ -1,0 +1,16 @@
+.logoutbutton {
+    padding-inline: 1.2rem;
+    padding-block: 0.5rem;
+    border-radius: 5px;
+    background-color: $firstgray;
+    color: $white;
+    box-shadow: 2px 2px 5px black;
+    transition: 1s;
+    cursor: pointer;
+    @include font(($primaryFont,$backupFont),1rem);
+    &:hover {
+        background-color: $red;
+        color: $firstgray;
+        box-shadow: 2px 2px 5px $firstgray;
+    }
+}

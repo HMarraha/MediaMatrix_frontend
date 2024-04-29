@@ -1,0 +1,65 @@
+.login-form-container {
+    width: 60%;
+    margin: auto;
+    margin-top: 5vh;
+    padding-block: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 10px;
+    filter: drop-shadow(8px 8px 10px gray);
+    text-align: center;
+    img {
+        width: 34%;
+        border-radius: 10px;
+    }
+    h2 {
+        @include font(($primaryFont,$backupFont),2rem)
+    }
+    .login-form {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px black;
+      p {
+        margin-top: 1rem;
+        color: black;
+      }
+      label {
+        color: $red;
+        text-align: left;
+        @include font(($primaryFont,$backupFont),1rem)
+      }
+    }
+    
+    .login-input {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: block;
+    }
+    
+    .login-button {
+      width: 100%;
+      padding: 10px;
+      background-color: $red;
+      color: $white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      @include font(($primaryFont,$backupFont),1rem);
+      &:hover {
+        background-color: blue;
+      }
+    }
+    
+    
+  }
+  
+  

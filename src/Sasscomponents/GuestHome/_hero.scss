@@ -9,11 +9,10 @@ main  {
     background-size: cover;
     min-height: 100vh;
     width: 100%;
-    z-index: -1;
     position: relative;
     filter: drop-shadow(8px 8px 10px gray);
     .welcomehero-text {
-        padding-top: 10rem;
+        padding-top: 5rem;
         max-width: 60%;
         margin: auto;
         z-index: 999;
@@ -28,6 +27,7 @@ main  {
             margin-top: 2rem;
             text-align: center
         }
+        
        
     }
     .heroposters {
@@ -37,7 +37,7 @@ main  {
         @include flex(center,center,2.5rem,row);
         flex-wrap: wrap;
         opacity: 0.5;
-        z-index: -1;
+        z-index: -898;
         padding: 0.1rem;
         img {
             width: 100px;

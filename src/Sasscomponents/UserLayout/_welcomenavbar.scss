@@ -1,0 +1,38 @@
+.profiledisplay {
+    @include flex(space-between,center,5px,row);
+    box-shadow: 2px 2px 5px black;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    .logout {
+        @include flex(space-evenly,center,2px,column);
+        @include border(1px,solid,black,10px);
+        background-image: linear-gradient($firstgray,$secondgray);
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 1rem 1rem;
+        position: absolute;
+        z-index: 999;
+        top: 6rem;
+        right: 1rem;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+        .profilebtn {
+            background-color: rgb(3,37,65);
+        }
+        .signout {
+           background-color: rgb(3,37,65);
+        }
+        
+    }
+}
+.profilename {
+    @include font(($secondaryFont,$backupFont),1.5rem);
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+.logoutinfo {
+    margin-top: 3rem;
+}
+.profileemail {
+    color: white;
+}

@@ -1,0 +1,157 @@
+.profile {
+    @include flex(center,top,10rem,row);
+   
+}
+.searchtitles {
+    @include font(($primaryFont,$backupFont),2rem);
+    width: 20%;
+    margin: 2rem auto;
+   
+}
+.searchmovies {
+    @include flex(start,top,2rem,row);
+    width: 90%;
+    margin: auto;
+    margin-block: 2rem;
+    .searchtitle {
+        @include font(($primaryFont,$backupFont),1.25rem)
+    }
+    .searchoverview {
+        @include font(($primaryFont,$backupFont),1rem)
+    }
+    .buttons {
+        @include flex(center,center,2rem,row);
+        margin-top: 2rem;
+        Button {
+            margin-left: 2rem;
+        }
+    }
+}
+.sidebar {
+    filter: drop-shadow(8px 8px 10px  gray);
+    @include flex(top,start,0,column);
+    width: 30%;
+    margin-right: auto;
+    margin-top: 4rem;
+    height: 50vh;
+    margin-left: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .sidebuttoncontainer {
+        width: 80%;
+        margin-inline: auto;
+        margin-top: 2rem;
+        Button {
+            border: none;
+            padding: 1rem;
+            width: 100%;
+        }
+    }
+}
+.stack {
+    width: 50%;
+    margin-left: auto;
+    margin-block: 2rem;
+}
+.searchformovie {
+    width: 60%;
+    margin: auto;
+    margin-top: 2rem;
+    .searchinput {
+        width: 80%;
+    }
+    .searchbutton {
+        margin-left: 2rem;
+        min-height: 3.4rem;
+        padding-inline: 2rem;
+    }
+}
+.success {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 99999;
+    background-color: green;
+    color: white;
+    @include font(($primaryFont,$backupFont),1rem);
+    padding: 1rem 5rem;
+    @include border(1px,solid,green,10px);
+}
+@media (max-width: 1550px) {
+    .searchtitles {
+        width: 25%;
+    }
+    .stack {
+        width: 30%;
+        margin: auto;
+    }
+}
+@media (max-width: 1270px) {
+    .searchformovie {
+        width: 80%;
+        .searchinput {
+            width: 100%;
+        }
+        .searchbutton {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 2rem;
+        }
+    }
+}
+@media (max-width: 1150px) {
+    .searchtitles {
+        width: 20%;
+        @include font(($primaryFont,$backupFont),1.5rem);
+        margin: auto;
+    }
+    .searchmovies {
+        @include flex(center,center,2rem,column);
+        text-align: center;
+    }
+    .stack {
+        width: 35%;
+    }
+}
+@media (max-width: 830px) {
+    .searchmovies {
+        .buttons {
+            @include flex(center,center,1rem,row);
+            Button {
+                margin-left: 0;
+                padding-inline: 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+@media (max-width: 555px) {
+    .searchmovies {
+        .buttons {
+            @include flex(center,center,1rem,column)
+        }
+    }
+    .stack {
+        width: 50%;
+    }
+    .searchtitles {
+        width: 50%;
+    }
+}
+@media (max-width: 1550px) {
+    .profile {
+        @include flex(center,center,2rem,column);
+        .movieslist {
+            width: 80%;
+            margin: 2rem auto;
+        }
+        .sidebar {
+            width: 80%;
+            margin: 2rem auto;
+            height: auto;
+            .sidebuttoncontainer {
+                width: 50%;
+                margin: 2rem auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,392 @@
+.backdropimage {
+    width: 100%;
+    background-image: linear-gradient(rgb(103, 34, 128,0.8),rgb(166, 38, 211,0.8));
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+.description-container {
+    @include flex(center,top,2rem,row);
+    @include border(1px,solid,purple,10px);
+    color: white;
+    filter: drop-shadow(8px 8px 10px gray);
+    text-shadow: 2px 2px 5px black;
+    box-shadow: 5px 5px 8px $red;
+    width: 70%;
+    margin: 2rem auto;
+    padding: 4rem;
+    background-image: linear-gradient(rgb(103, 34, 128,0.8),rgb(166, 38, 211,0.8));
+    img {
+        border-radius: 10px;
+    }
+    .movieimage {
+        min-width: 35rem;
+    }
+    .movietitle {
+        @include flex(center,center,2rem,row);
+        @include font(($primaryFont,$backupFont),1.25rem);
+    }
+    .genres {
+        @include flex(center,center,2rem,row);
+        @include font(($primaryFont,$backupFont),1.25rem);
+        text-align: center
+    }
+    .seasons {
+        @include flex(center,center,2rem,row);
+        @include font(($primaryFont,$backupFont),1.25rem);
+        text-align: center
+    }
+    .vote {
+        @include font(($primaryFont,$backupFont),3rem);
+        @include border(1px,solid,black,100%);
+        box-shadow: 5px 5px 8px rgb(3,37,65);
+        background-color: rgb(3,37,65);
+        text-align: center;
+        width: 50%;
+        margin-block: 2rem;
+        margin-left: 10rem;
+    }
+    .summary {
+        @include font(($primaryFont,$backupFont),1.5rem);
+        margin-top: 3rem;
+    }
+    .buttons {
+        @include flex(center,center,1rem,row);
+        margin-top: 1rem;
+        padding-inline: 1rem;
+        .watch {
+            background-color: rgb(3,37,65);
+        }
+    }
+    .list {
+        @include font(($primaryFont,$backupFont),1.75rem);
+        text-align: center;
+    }
+}
+.media {
+    margin-top: 4rem;
+}
+.movie-credits {
+    .media {
+        .lastepisodetoair {
+            @include flex(start,center,2rem,row);
+            width: 80%;
+            margin: 4rem auto;
+            @include border(1px,solid,white,10px);
+            box-shadow: 5px 5px 8px rgba(0,0,0,0.3);
+            @include font(($primaryFont,$backupFont),1.1rem)
+        }
+    }
+}
+
+.letainfo {
+    @include flex(space-between,top,2rem,row);
+}
+.letaoverview {
+    text-align: start;
+    margin-top: 2rem;
+    width: 100%;
+    font-weight: 400;
+}
+.letaseason {
+    color: gray;
+}
+.letaruntime {
+    color: gray;
+    font-weight: 400;
+}
+.lastepisodetoairimg {
+    width: 20rem;
+    height: 31vh;
+    @include border(1px,solid,white,10px)
+}
+.noimage {
+    width: 20rem;
+    @include border(1px,solid,white,10px)
+}
+.seasondesc {
+    @include flex(start,top,1rem,row);
+    width: 80%;
+    margin: 4rem auto;
+    @include border(1px,solid,white,10px);
+    box-shadow: 5px 5px 8px rgba(0,0,0,0.3);
+    @include font(($primaryFont,$backupFont),1.1rem)
+}
+.seasonimg {
+    width: 20rem;
+    @include border(1px,solid,white,10px)
+}
+.seasoninfo {
+    text-align: start;
+    .seasonname {
+        font-size: 2rem;
+        padding-right: 2rem;
+    }
+    .seasonpremiere {
+        font-weight: 400;
+    }
+    .seasonoverview {
+        font-weight: 400;
+        margin-top: 5rem;
+    }
+}
+
+.movie-credits {
+    width: 82%;
+    margin: auto;
+    @include border(1px,solid,white,10px);
+    background-color: white;
+    text-align: center;
+    h1 {
+        @include font(($secondaryFont,$backupFont),3rem);
+    }
+    .cast-container {
+        margin-top: 4rem;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    .cast {
+        display: inline-flex;
+        max-width: 82%;
+        margin: auto;
+        overflow-x: auto;
+        .actor {
+            flex: 0 0 auto;
+            margin-right: 1.25rem;
+        }
+        .actor:last-child {
+            margin-right: 0;
+        }
+        img {
+            border-radius: 10px;
+        }
+        p {
+            @include font(($secondaryFont,$backupFont),1.2rem)
+        }
+        .nopfp {
+            max-width: 13rem;
+            min-height: 91.5%;
+        }
+    }
+    .display-content {
+        margin-top: 4rem;
+        overflow-y: hidden;
+        white-space: nowrap;
+        max-width: 82%;
+        margin: auto;
+    }
+    .youtube-video {
+        display: inline-flex;
+        margin-right: 1.25rem;
+        iframe {
+            width: 98rem;
+            height: 50rem;
+        }
+    }
+    .additional {
+        max-width: 82%;
+        margin: auto;
+        @include flex(center,center,2rem,row);
+        flex: 1;
+        .status,.budget,.revenue,.og-language {
+            @include border(1px,solid,purple,10px);
+            @include font(($primaryFont,$backupFont),1.25rem);
+            background-image: linear-gradient(rgb(103, 34, 128,0.8),rgb(166, 38, 211,0.8));
+            color: white;
+            filter: drop-shadow(8px 8px 10px gray);
+            text-shadow: 2px 2px 5px black;
+            margin-top: 4rem;
+            padding: 2rem 2rem;
+            p {
+                color: white;
+                font-weight: 400;
+                text-shadow: none;
+            }
+        }
+    }
+    .original-language {
+        text-transform: uppercase;
+    }
+    .reviewflex {
+        overflow-x: auto;
+    }
+    .reviews {
+        margin-top: 4rem;
+    }
+    .review {
+        display: inline-flex;
+        margin: auto;
+        padding: 2rem 2rem;
+        .thereview {
+            @include border(1px,solid,purple,10px);
+            @include font(($primaryFont,$backupFont),1.25rem);
+            background-image: linear-gradient(rgb(103, 34, 128,0.8),rgb(166, 38, 211,0.8));
+            color: white;
+            filter: drop-shadow(8px 8px 10px gray);
+            text-shadow: 2px 2px 5px black;
+            margin-top: 1rem;
+            margin-right: 1.25rem;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        
+    }
+    .author-details {
+        width: 75rem;
+        padding: 1rem;
+        @include flex(start,center,1rem,row);
+        .reviewpfp {
+            @include border(1px,solid,white,20rem);
+            width: 4rem;
+        }
+        .reviewauthor {
+            text-align: start;
+        }
+        .noreviewpfp {
+            width: 4rem;
+        }
+        h1 {
+           @include font(($secondaryFont,$backupFont),1rem);
+        }
+        p {
+            @include font(($secondaryFont,$backupFont),1rem);
+            color: gray;
+        }
+        .time {
+            @include flex(start,center,1rem,row);
+        }
+        .reviewrating {
+            @include flex(start,center,0,row);
+        }
+    }
+    .reviewcontent {
+        text-align: start;
+        padding: 1rem;
+        @include font(($secondaryFont,$backupFont),1rem);
+        text-shadow: none;
+    }
+    .noprofilepic {
+        width: 4rem;
+        @include border(1px,solid,white,20rem);
+    }
+}
+@media (max-width: 1660px) {
+    .description-container {
+        @include flex(center,top,2rem,column);
+        text-align: center;
+        .movieimage {
+            min-width: 0;
+            width: 30rem;
+            margin: auto;
+        }
+        .vote {
+            width: 30rem;
+            margin: 2rem auto;
+        }
+    }
+}
+@media (max-width: 1210px) {
+    .movie-credits {
+        .youtube-video{
+            iframe {
+                width: 50rem;
+                height: 30rem;
+            }
+        }
+        .postersize {
+            width: 20rem;
+        }
+        .additional {
+            @include flex(center,center,2rem,column);
+            .status,.budget,.revenue,.og-language {
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+        .review {
+            padding: 2rem 2rem;
+            .thereview {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+@media (max-width: 1175px) {
+    .movie-credits {
+        .seasonsdesc {
+            .seasondesc {
+                @include flex(center,center,2rem,column);
+                .seasoninfo {
+                    text-align: center;
+                }
+            }
+        }
+        .media {
+            .lastepisodetoair {
+                @include flex(center,center,2rem,column);
+            }
+        }
+    }
+}
+@media (max-width: 905px) {
+    .description-container {
+        width: 100%;
+        .buttons {
+            @include flex(center,center,1rem,column);
+            width: 100%;
+        }
+        .movietitle {
+            @include flex(center,center,1rem,column);
+        }
+        .genres {
+            @include flex(center,center,1rem,column);
+        }
+        .vote {
+            width: 89%;
+        }
+        .movieimage {
+            width: 20rem;
+        }
+    }
+}
+@media (max-width: 830px) {
+    .movie-credits {
+        .media {
+            .lastepisodetoair {
+                width: 100%;
+            }
+        }
+        .seasonsdesc {
+            .seasondesc {
+                width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    .description-container {
+        width: 100%;
+        .movietitle {
+            @include font(($primaryFont,$backupFont),1rem);
+        }
+        .movieimage {
+            width: 100%;
+        }
+    }
+    .movie-credits {
+        width: 100%;
+        .youtube-video {
+            iframe {
+                width: 25rem;
+                height: 15rem;
+            }
+        }
+        .media {
+            .buttongroup {
+                width: 80%;
+            }
+        }
+    }
+}

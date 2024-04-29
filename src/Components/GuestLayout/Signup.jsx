@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useEffect } from "react";
-
-import "./Signup.scss";
+import { Link } from "react-router-dom";
+import logo from '../../assets/logo.png'
+import { useStateContext } from "../../Contextapi/contextProvider";
+import axiosClient from "../../Axios/axios";
 
 const SignupForm = () => {
+  const {setUser} = useStateContext()
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -20,72 +23,64 @@ const SignupForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Envoyer les données du formulaire à votre backend ou traiter les données ici
-    console.log(formData);
-  };
+    const signup = async () => {
+      try {
+        const response = await axiosClient.post('/users/signup', formData)
+        setUser(response.data)
+      } catch(e) {
+        console.error(e)
+      }
+    }
+    signup()
+  }; 
 
   return (
     <div className="signup-form-container">
+      <Link to='/home'><img src={logo} alt="" /></Link>
       <h2>Signup</h2>
       <form onSubmit={handleSubmit} className="signup-form">
-        <table>
-          <tbody>
-            <tr>
-              <td>
+       
                 <label htmlFor="username">
                   <h4>Username</h4>
                 </label>
-              </td>
-              <td>
-                {" "}
+              
                 <input
                   type="text"
                   name="username"
                   value={formData.username}
                   onChange={handleChange}
-                  placeholder="username"
+                  placeholder="Username"
                   required
                 />
-              </td>
-            </tr>
-            <tr>
-              <td>
+           
                 <label htmlFor="email">
                   <h4>Email</h4>
                 </label>
-              </td>
-              <td>
-                {" "}
+             
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="email"
+                  placeholder="Email"
                   required
                 />
-              </td>
-            </tr>
-            <tr>
-              <td>
+             
                 <label htmlFor="password">
                   <h4>Password</h4>
                 </label>
-              </td>
-              <td>
+             
                 <input
                   type="password"
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  placeholder="password"
+                  placeholder="Password"
                   required
                 />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <button type="submit">Inscription</button>
+             
+        <button type="submit">Signup</button>
+        <Link to='/login' style={{textDecoration: 'none',color:'black'}}><p>Already have an account? Login now!</p></Link>
       </form>
     </div>
   );

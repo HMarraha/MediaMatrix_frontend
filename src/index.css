@@ -1,10 +1,1069 @@
 @import "./index.css";
+.logoutbutton {
+  padding-inline: 1.2rem;
+  padding-block: 0.5rem;
+  border-radius: 5px;
+  background-color: #3A4750;
+  color: #D3D6DB;
+  box-shadow: 2px 2px 5px black;
+  transition: 1s;
+  cursor: pointer;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.logoutbutton:hover {
+  background-color: #BE3144;
+  color: #3A4750;
+  box-shadow: 2px 2px 5px #3A4750;
+}
+
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+  margin-top: 2vh;
+  padding-block: 2rem;
+  background-color: white;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 10px;
+  filter: drop-shadow(8px 8px 10px gray);
+  text-align: center;
+}
+.signup-form-container p {
+  margin-top: 1rem;
+}
+.signup-form-container img {
+  width: 34%;
+  border-radius: 10px;
+}
+.signup-form-container h2 {
+  margin-top: 1rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.signup-form-container .signup-form {
+  background-color: #f0f0f0;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px black;
+}
+.signup-form-container .signup-form label {
+  color: #BE3144;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: left;
+}
+.signup-form-container .signup-form input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.signup-form-container .signup-form button {
+  padding: 10px 20px;
+  background-color: #BE3144;
+  color: #D3D6DB;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+.signup-form-container .signup-form button:hover {
+  background-color: #0057b3;
+}
+
+.login-form-container {
+  width: 60%;
+  margin: auto;
+  margin-top: 5vh;
+  padding-block: 5rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 10px;
+  filter: drop-shadow(8px 8px 10px gray);
+  text-align: center;
+}
+.login-form-container img {
+  width: 34%;
+  border-radius: 10px;
+}
+.login-form-container h2 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.login-form-container .login-form {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+}
+.login-form-container .login-form p {
+  margin-top: 1rem;
+  color: black;
+}
+.login-form-container .login-form label {
+  color: #BE3144;
+  text-align: left;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.login-form-container .login-input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+}
+.login-form-container .login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #BE3144;
+  color: #D3D6DB;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.login-form-container .login-button:hover {
+  background-color: blue;
+}
+
+.backdropimage {
+  width: 100%;
+  background-image: linear-gradient(rgba(103, 34, 128, 0.8), rgba(166, 38, 211, 0.8));
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.description-container {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 2rem;
+  flex-direction: row;
+  border: 1px solid purple;
+  border-radius: 10px;
+  color: white;
+  filter: drop-shadow(8px 8px 10px gray);
+  text-shadow: 2px 2px 5px black;
+  box-shadow: 5px 5px 8px #BE3144;
+  width: 70%;
+  margin: 2rem auto;
+  padding: 4rem;
+  background-image: linear-gradient(rgba(103, 34, 128, 0.8), rgba(166, 38, 211, 0.8));
+}
+.description-container img {
+  border-radius: 10px;
+}
+.description-container .movieimage {
+  min-width: 35rem;
+}
+.description-container .movietitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.description-container .genres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-align: center;
+}
+.description-container .seasons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-align: center;
+}
+.description-container .vote {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  border: 1px solid black;
+  border-radius: 100%;
+  box-shadow: 5px 5px 8px rgb(3, 37, 65);
+  background-color: rgb(3, 37, 65);
+  text-align: center;
+  width: 50%;
+  margin-block: 2rem;
+  margin-left: 10rem;
+}
+.description-container .summary {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}
+.description-container .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+  margin-top: 1rem;
+  padding-inline: 1rem;
+}
+.description-container .buttons .watch {
+  background-color: rgb(3, 37, 65);
+}
+.description-container .list {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.media {
+  margin-top: 4rem;
+}
+
+.movie-credits .media .lastepisodetoair {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  width: 80%;
+  margin: 4rem auto;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.letainfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  gap: 2rem;
+  flex-direction: row;
+}
+
+.letaoverview {
+  text-align: start;
+  margin-top: 2rem;
+  width: 100%;
+  font-weight: 400;
+}
+
+.letaseason {
+  color: gray;
+}
+
+.letaruntime {
+  color: gray;
+  font-weight: 400;
+}
+
+.lastepisodetoairimg {
+  width: 20rem;
+  height: 31vh;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.noimage {
+  width: 20rem;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.seasondesc {
+  display: flex;
+  justify-content: start;
+  align-items: top;
+  gap: 1rem;
+  flex-direction: row;
+  width: 80%;
+  margin: 4rem auto;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.seasonimg {
+  width: 20rem;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.seasoninfo {
+  text-align: start;
+}
+.seasoninfo .seasonname {
+  font-size: 2rem;
+  padding-right: 2rem;
+}
+.seasoninfo .seasonpremiere {
+  font-weight: 400;
+}
+.seasoninfo .seasonoverview {
+  font-weight: 400;
+  margin-top: 5rem;
+}
+
+.movie-credits {
+  width: 82%;
+  margin: auto;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+}
+.movie-credits h1 {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.movie-credits .cast-container {
+  margin-top: 4rem;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.movie-credits .cast {
+  display: inline-flex;
+  max-width: 82%;
+  margin: auto;
+  overflow-x: auto;
+}
+.movie-credits .cast .actor {
+  flex: 0 0 auto;
+  margin-right: 1.25rem;
+}
+.movie-credits .cast .actor:last-child {
+  margin-right: 0;
+}
+.movie-credits .cast img {
+  border-radius: 10px;
+}
+.movie-credits .cast p {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.movie-credits .cast .nopfp {
+  max-width: 13rem;
+  min-height: 91.5%;
+}
+.movie-credits .display-content {
+  margin-top: 4rem;
+  overflow-y: hidden;
+  white-space: nowrap;
+  max-width: 82%;
+  margin: auto;
+}
+.movie-credits .youtube-video {
+  display: inline-flex;
+  margin-right: 1.25rem;
+}
+.movie-credits .youtube-video iframe {
+  width: 98rem;
+  height: 50rem;
+}
+.movie-credits .additional {
+  max-width: 82%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  flex: 1;
+}
+.movie-credits .additional .status, .movie-credits .additional .budget, .movie-credits .additional .revenue, .movie-credits .additional .og-language {
+  border: 1px solid purple;
+  border-radius: 10px;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  background-image: linear-gradient(rgba(103, 34, 128, 0.8), rgba(166, 38, 211, 0.8));
+  color: white;
+  filter: drop-shadow(8px 8px 10px gray);
+  text-shadow: 2px 2px 5px black;
+  margin-top: 4rem;
+  padding: 2rem 2rem;
+}
+.movie-credits .additional .status p, .movie-credits .additional .budget p, .movie-credits .additional .revenue p, .movie-credits .additional .og-language p {
+  color: white;
+  font-weight: 400;
+  text-shadow: none;
+}
+.movie-credits .original-language {
+  text-transform: uppercase;
+}
+.movie-credits .reviewflex {
+  overflow-x: auto;
+}
+.movie-credits .reviews {
+  margin-top: 4rem;
+}
+.movie-credits .review {
+  display: inline-flex;
+  margin: auto;
+  padding: 2rem 2rem;
+}
+.movie-credits .review .thereview {
+  border: 1px solid purple;
+  border-radius: 10px;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  background-image: linear-gradient(rgba(103, 34, 128, 0.8), rgba(166, 38, 211, 0.8));
+  color: white;
+  filter: drop-shadow(8px 8px 10px gray);
+  text-shadow: 2px 2px 5px black;
+  margin-top: 1rem;
+  margin-right: 1.25rem;
+}
+.movie-credits .review .thereview:last-child {
+  margin-right: 0;
+}
+.movie-credits .author-details {
+  width: 75rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+.movie-credits .author-details .reviewpfp {
+  border: 1px solid white;
+  border-radius: 20rem;
+  width: 4rem;
+}
+.movie-credits .author-details .reviewauthor {
+  text-align: start;
+}
+.movie-credits .author-details .noreviewpfp {
+  width: 4rem;
+}
+.movie-credits .author-details h1 {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.movie-credits .author-details p {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: gray;
+}
+.movie-credits .author-details .time {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+.movie-credits .author-details .reviewrating {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0;
+  flex-direction: row;
+}
+.movie-credits .reviewcontent {
+  text-align: start;
+  padding: 1rem;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: none;
+}
+.movie-credits .noprofilepic {
+  width: 4rem;
+  border: 1px solid white;
+  border-radius: 20rem;
+}
+
+@media (max-width: 1660px) {
+  .description-container {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    gap: 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  .description-container .movieimage {
+    min-width: 0;
+    width: 30rem;
+    margin: auto;
+  }
+  .description-container .vote {
+    width: 30rem;
+    margin: 2rem auto;
+  }
+}
+@media (max-width: 1210px) {
+  .movie-credits .youtube-video iframe {
+    width: 50rem;
+    height: 30rem;
+  }
+  .movie-credits .postersize {
+    width: 20rem;
+  }
+  .movie-credits .additional {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .movie-credits .additional .status, .movie-credits .additional .budget, .movie-credits .additional .revenue, .movie-credits .additional .og-language {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .movie-credits .review {
+    padding: 2rem 2rem;
+  }
+  .movie-credits .review .thereview {
+    margin-right: 1rem;
+  }
+}
+@media (max-width: 1175px) {
+  .movie-credits .seasonsdesc .seasondesc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .movie-credits .seasonsdesc .seasondesc .seasoninfo {
+    text-align: center;
+  }
+  .movie-credits .media .lastepisodetoair {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
+@media (max-width: 905px) {
+  .description-container {
+    width: 100%;
+  }
+  .description-container .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+  }
+  .description-container .movietitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .description-container .genres {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .description-container .vote {
+    width: 89%;
+  }
+  .description-container .movieimage {
+    width: 20rem;
+  }
+}
+@media (max-width: 830px) {
+  .movie-credits .media .lastepisodetoair {
+    width: 100%;
+  }
+  .movie-credits .seasonsdesc .seasondesc {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .description-container {
+    width: 100%;
+  }
+  .description-container .movietitle {
+    font-family: "Cairo", sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .description-container .movieimage {
+    width: 100%;
+  }
+  .movie-credits {
+    width: 100%;
+  }
+  .movie-credits .youtube-video iframe {
+    width: 25rem;
+    height: 15rem;
+  }
+  .movie-credits .media .buttongroup {
+    width: 80%;
+  }
+}
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 10rem;
+  flex-direction: row;
+}
+
+.searchtitles {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  width: 20%;
+  margin: 2rem auto;
+}
+
+.searchmovies {
+  display: flex;
+  justify-content: start;
+  align-items: top;
+  gap: 2rem;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  margin-block: 2rem;
+}
+.searchmovies .searchtitle {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.searchmovies .searchoverview {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.searchmovies .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+.searchmovies .buttons Button {
+  margin-left: 2rem;
+}
+
+.sidebar {
+  filter: drop-shadow(8px 8px 10px gray);
+  display: flex;
+  justify-content: top;
+  align-items: start;
+  gap: 0;
+  flex-direction: column;
+  width: 30%;
+  margin-right: auto;
+  margin-top: 4rem;
+  height: 50vh;
+  margin-left: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sidebar .sidebuttoncontainer {
+  width: 80%;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+.sidebar .sidebuttoncontainer Button {
+  border: none;
+  padding: 1rem;
+  width: 100%;
+}
+
+.stack {
+  width: 50%;
+  margin-left: auto;
+  margin-block: 2rem;
+}
+
+.searchformovie {
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
+}
+.searchformovie .searchinput {
+  width: 80%;
+}
+.searchformovie .searchbutton {
+  margin-left: 2rem;
+  min-height: 3.4rem;
+  padding-inline: 2rem;
+}
+
+.success {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 99999;
+  background-color: green;
+  color: white;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 1rem 5rem;
+  border: 1px solid green;
+  border-radius: 10px;
+}
+
+@media (max-width: 1550px) {
+  .searchtitles {
+    width: 25%;
+  }
+  .stack {
+    width: 30%;
+    margin: auto;
+  }
+}
+@media (max-width: 1270px) {
+  .searchformovie {
+    width: 80%;
+  }
+  .searchformovie .searchinput {
+    width: 100%;
+  }
+  .searchformovie .searchbutton {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 1150px) {
+  .searchtitles {
+    width: 20%;
+    font-family: "Cairo", sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: auto;
+  }
+  .searchmovies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  .stack {
+    width: 35%;
+  }
+}
+@media (max-width: 830px) {
+  .searchmovies .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row;
+  }
+  .searchmovies .buttons Button {
+    margin-left: 0;
+    padding-inline: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 555px) {
+  .searchmovies .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .stack {
+    width: 50%;
+  }
+  .searchtitles {
+    width: 50%;
+  }
+}
+@media (max-width: 1550px) {
+  .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .profile .movieslist {
+    width: 80%;
+    margin: 2rem auto;
+  }
+  .profile .sidebar {
+    width: 80%;
+    margin: 2rem auto;
+    height: auto;
+  }
+  .profile .sidebar .sidebuttoncontainer {
+    width: 50%;
+    margin: 2rem auto;
+  }
+}
+.faq-container {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  max-width: 70%;
+  margin: 2rem auto;
+  text-align: center;
+  filter: drop-shadow(8px 8px 10px gray);
+}
+.faq-container .question-container {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-block: 2rem;
+  margin-top: 2rem;
+  box-shadow: 8px 8px 10px gray;
+}
+.faq-container .question-container .question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  flex-direction: row;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-inline: 2rem;
+}
+.faq-container .question-container .answer {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 1.75rem;
+  padding-inline: 2rem;
+  text-align: start;
+  transition: all 1s cubic-bezier(1, 0, 1, 0);
+  display: block;
+}
+.faq-container .question-container .noanswer {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 1.75rem;
+  padding-inline: 2rem;
+  text-align: start;
+  transition: all 1s cubic-bezier(0, 1, 0, 1);
+  display: none;
+}
+
+.moviecardscontainer {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+.moviecardscontainer h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+.moviecardscontainer .moviebuttons {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+.moviecardscontainer .moviebuttons Button {
+  margin-right: 1rem;
+}
+.moviecardscontainer .card {
+  overflow-x: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-direction: row;
+}
+.moviecardscontainer .card .moviecard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-direction: column;
+  margin-top: 1rem;
+  transform: translateX(60rem);
+  text-align: center;
+}
+.moviecardscontainer .card .moviecard img {
+  width: 150px;
+  border-radius: 15px;
+  transition: 1s;
+}
+.moviecardscontainer .card .moviecard img:hover {
+  transform: scale(1.1);
+}
+.moviecardscontainer .card .moviecard .movietitle {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.moviecardscontainer .card .moviecard .release {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.btn-container {
+  margin-top: 2rem;
+}
+.btn-container .btn {
+  background: transparent;
+  cursor: pointer;
+  border: 5px solid white;
+  border-radius: 10px;
+  color: white;
+  position: relative;
+  transition: color 0.4s linear;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1.125rem;
+  width: 50rem;
+  padding: 1rem;
+}
+.btn-container .btn:hover {
+  color: black;
+  text-shadow: 2px 2px 5px #BE3144;
+}
+.btn-container .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #6495ED;
+  border: 1px solid #6495ED;
+  border-radius: 10px;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  border-radius: 0px;
+}
+.btn-container .welcomehero-btn::before {
+  transform: scaleX(0);
+}
+.btn-container .welcomehero-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.profiledisplay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  flex-direction: row;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+}
+.profiledisplay .logout {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2px;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-image: linear-gradient(#3A4750, #303841);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1rem 1rem;
+  position: absolute;
+  z-index: 999;
+  top: 6rem;
+  right: 1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+.profiledisplay .logout .profilebtn {
+  background-color: rgb(3, 37, 65);
+}
+.profiledisplay .logout .signout {
+  background-color: rgb(3, 37, 65);
+}
+
+.profilename {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+.logoutinfo {
+  margin-top: 3rem;
+}
+
+.profileemail {
+  color: white;
+}
+
 .footer-container {
-  margin-top: 20rem;
+  margin-top: 2rem;
   max-width: 100%;
   text-align: center;
   background: linear-gradient(#3A4750, #BE3144);
   width: 100%;
+}
+.footer-container .logo {
+  width: 40%;
 }
 .footer-container .content-container {
   display: flex;
@@ -164,6 +1223,10 @@
   text-decoration: none;
 }
 
+.upcoming {
+  margin-top: 20rem;
+}
+
 main {
   width: 70%;
   margin: auto;
@@ -176,12 +1239,11 @@ main {
   background-size: cover;
   min-height: 100vh;
   width: 100%;
-  z-index: -1;
   position: relative;
   filter: drop-shadow(8px 8px 10px gray);
 }
 .welcomehero .welcomehero-text {
-  padding-top: 10rem;
+  padding-top: 5rem;
   max-width: 60%;
   margin: auto;
   z-index: 999;
@@ -216,7 +1278,7 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   opacity: 0.5;
-  z-index: -1;
+  z-index: -898;
   padding: 0.1rem;
 }
 .welcomehero .heroposters img {
@@ -232,6 +1294,7 @@ main {
   padding-inline: 5rem;
   padding-block: 2rem;
   box-shadow: 2px 2px 5px;
+  background-color: #D3D6DB;
 }
 .navbar img {
   width: 30%;

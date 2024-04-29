@@ -12,8 +12,8 @@ const Navbar = () => {
                 <li className='premiumbutton'>Premium</li>  
             </div>
             <div className='loginsignup'>
-                <Link to='/login'><li className='loginbutton'>Login</li></Link>
-                <Link to='/signup'><li className='signupbutton'>Signup</li></Link>
+                <Link to='/login' style={{textDecoration: 'none'}}><li className='loginbutton'>Login</li></Link>
+                <Link to='/signup' style={{textDecoration: 'none'}}><li className='signupbutton'>Signup</li></Link>
             </div>
         </ul>
     </nav>

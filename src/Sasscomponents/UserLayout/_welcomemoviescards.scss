@@ -1,0 +1,42 @@
+.moviecardscontainer {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    h1 {
+        @include font(($primaryFont,$backupFont),2rem)
+    }
+    .moviebuttons {
+        margin-left: 1rem;
+        margin-top: 1rem;
+        Button {
+            margin-right: 1rem;
+        }
+    }
+    .card {
+        overflow-x: scroll;
+        @include flex(center,flex-start,1rem,row);
+        .moviecard {
+            @include flex(center,center,2px,column);
+            margin-top: 1rem;
+            transform: translateX(60rem);
+            text-align: center;
+            img {
+                width: 150px;
+                border-radius: 15px;
+                transition: 1s;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+            .movietitle {
+                @include font(('Cairo',sans-serif),1rem);
+                text-decoration: none;
+            }
+            .release {
+                @include font(('Cairo',sans-serif),0.9rem);
+                font-weight: 400;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,61 +1,62 @@
 import React, { useEffect } from "react";
-
+import logo from '../../assets/logo.png'
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import axiosClient from "../../Axios/axios";
+import { useStateContext } from "../../Contextapi/contextProvider";
 
-import "./Login.scss";
+
 
 const LoginForm = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const {setUser} = useStateContext()
   const handleLogin = (e) => {
     e.preventDefault();
-    // Insérer ici la logique de connexion
+    const login = async () => {
+      try {
+        const response = await axiosClient.post('/users/login',{
+          email,
+          password
+        })
+        setUser(response.data.user)
+        console.log(response)
+      } catch(error) {
+        console.error(error)
+      }
+    }
+    login()
   };
 
   return (
     <div className="login-form-container">
+      <Link to='/home'><img src={logo} alt="" /></Link>
       <h2>Login</h2>
-      <form onSubmit={handleLogin} className="login-form">
-        <table>
-          <tr>
-            <td>
-              <label htmlFor="username">
-                <h4>Username</h4>
+      <form onSubmit={handleLogin} className="login-form"> 
+              <label htmlFor="email">
+                <h4>Email</h4>
               </label>
-            </td>
-            <td>
-              {" "}
               <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="login-input"
               />
-            </td>
-          </tr>
-          <tr>
-            <td>
               <label htmlFor="password">
                 <h4>Password</h4>
               </label>
-            </td>
-            <td>
               <input
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="login-input"
               />
-            </td>
-          </tr>
-        </table>
-
         <button type="submit" className="login-button">
-          Connection
+          Sign in
         </button>
+        <Link to='/signup' style={{textDecoration: 'none'}}><p>Don't have an account? click here to signup!</p></Link>
       </form>
     </div>
   );

@@ -5,6 +5,10 @@ import Login from '../Components/GuestLayout/Login'
 import GuestHome from '../Components/GuestLayout/GuestHome'
 import UserLayout from '../Components/UserLayout/UserLayout'
 import NotFound from '../Components/NotFound/NotFound'
+import Welcome from '../Components/UserLayout/Welcome'
+import Search from '../Components/UserLayout/Search'
+import Description from '../Components/UserLayout/Description'
+import Profile from '../Components/UserLayout/Profile'
 const router = createBrowserRouter([
     {
         path: '/',
@@ -38,7 +42,27 @@ const router = createBrowserRouter([
         children: [
             {
                 path:'/',
-                element: <Navigate to='/home'/>
+                element: <Navigate to='/welcome'/>
+            },
+            {
+                path: '/welcome',
+                element: <Welcome/>
+            },
+            {
+                path:'/search',
+                element: <Search/>
+            },
+            {
+                path: '/description/movie/:id/:original_title',
+                element: <Description/>
+            },
+            {
+                path: '/description/tv/:id/:original_name',
+                element: <Description/>
+            },
+            {
+                path: '/profile',
+                element: <Profile/>
             }
         ]
     }

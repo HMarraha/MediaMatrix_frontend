@@ -1,9 +1,12 @@
 .footer-container {
-    margin-top: 20rem;
+    margin-top: 2rem;
     max-width: 100%;
     text-align: center;
     background: linear-gradient($firstgray,$red);
     width: 100%;
+    .logo {
+        width: 40%;
+    }
     .content-container {
         @include flex(center,center,10rem,row);
         padding: 6rem;

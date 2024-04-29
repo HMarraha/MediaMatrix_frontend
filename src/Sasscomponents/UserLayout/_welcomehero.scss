@@ -1,0 +1,28 @@
+.btn-container {
+    margin-top: 2rem;
+    .btn {
+        background: transparent;
+        cursor: pointer;
+        @include border(5px,solid,white,10px);
+        color: white;
+        position: relative;
+        transition: color 0.4s linear;
+        @include font(($secondaryFont,$backupFont),1.125rem);
+        width: 50rem;
+        padding: 1rem;
+    }
+    .btn:hover {
+        color: black;
+        text-shadow: 2px 2px 5px $red;
+    }
+    .btn::before {
+        @include btnAnimation();
+        border-radius: 0px;
+    }
+    .welcomehero-btn::before {
+        transform: scaleX(0);
+    }
+    .welcomehero-btn:hover::before {
+        transform: scaleX(1);
+    }
+}
