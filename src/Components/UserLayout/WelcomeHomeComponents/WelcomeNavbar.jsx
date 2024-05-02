@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStateContext } from '../../../Contextapi/contextProvider'
 import {Link} from 'react-router-dom'
 import logo from '../../../assets/logo.png'
@@ -9,6 +9,14 @@ const WelcomeNavbar = () => {
     const {user,setUser} = useStateContext()
     const [logout,setLogout] = useState(true)
     const [error,setError] = useState()
+    const [loading,setLoading] = useState(true)
+
+    useEffect(() => {
+      console.log('first')
+      if (user) setLoading(false)
+      else setLoading(true)
+    }, [user])
+
     const handleLogout = () => {
         setLogout(prevLogout => !prevLogout)
       }
@@ -29,6 +37,9 @@ const WelcomeNavbar = () => {
           transition: logout ? "0s" : "150ms ease-out",
           opacity: logout ? "0" : "1",
         }
+
+  if (loading) return <></>
+
   return (
     <>
         <nav className='navbar'>

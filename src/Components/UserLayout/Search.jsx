@@ -158,11 +158,11 @@ const Search = () => {
             <div className="movieslist">
                 {searching ? searchResults?.map(item => (
                     <div key={item.id} className="searchmovies">
-                        <Link to={`/description/movies/${item.id}/${item.original_title}`}>
+                        <Link to={`/description/movie/${item.id}/${item.original_title}`}>
                         {item.poster_path ? <img style={{borderRadius: '10px'}} src={`${IMG_BASE_URL_SMALL}${item.poster_path}`} alt="" /> : <img style={{width: '200px'}} src={nopfp} alt="" />}
                         </Link>
                         <div>
-                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/movies/${item.id}/${item.original_title}`}>
+                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/movie/${item.id}/${item.original_title}`}>
                             <p className='searchtitle'>{item.original_title}</p>
                         </Link>    
                             <p className='searchoverview'>{item.overview}</p>
@@ -181,11 +181,11 @@ const Search = () => {
                     </div>
                 )) : movie?.map((item,index) => (
                         <div key={item.id} className="searchmovies">
-                            <Link to={`/description/movies/${item.id}/${item.original_title}`}>
+                            <Link to={`/description/movie/${item.id}/${item.original_title}`}>
                                 {item.poster_path ? <img id='image' name='image' style={{borderRadius: '10px'}} src={`${IMG_BASE_URL_SMALL}${item.poster_path}`} alt="" /> : <img id='image' name='image' style={{width: '200px'}} src={nopfp} alt="" />}
                             </Link>
                             <div>
-                            <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/movies/${item.id}/${item.original_title}`}>
+                            <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/movie/${item.id}/${item.original_title}`}>
                                 <p className='searchtitle' id='title' name="title">{item.original_title}</p>
                             </Link>    
                                 <p className='searchoverview' name='overview' id='overview' >{item.overview}</p>
@@ -253,11 +253,11 @@ if (tvShowsList) {
         <div className="movieslist">
                 {tvSearching ? tvSearchResults?.map(item => (
                     <div key={item.id} className="searchmovies">
-                        <Link to={`/description/tvshows/${item.id}/${item.original_name}`}>
+                        <Link to={`/description/tv/${item.id}/${item.original_name}`}>
                         {item.poster_path ? <img style={{borderRadius: '10px'}} src={`${IMG_BASE_URL_SMALL}${item.poster_path}`} alt="" /> : <img style={{width: '200px'}} src={nopfp} alt="" />}
                         </Link>
                         <div>
-                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/tvshows/${item.id}/${item.original_name}`}>
+                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/tv/${item.id}/${item.original_name}`}>
                             <p className='searchtitle'>{item.original_name}</p>
                         </Link>    
                             <p className='searchoverview'>{item.overview}</p>
@@ -276,11 +276,11 @@ if (tvShowsList) {
                     </div>
                 )) : tvShow?.map(item => (
                     <div key={item.id} className="searchmovies">
-                        <Link to={`/description/tvshows/${item.id}/${item.original_name}`}>
+                        <Link to={`/description/tv/${item.id}/${item.original_name}`}>
                             {item.poster_path ? <img style={{borderRadius: '10px'}} src={`${IMG_BASE_URL_SMALL}${item.poster_path}`} alt="" /> : <img style={{width: '200px'}} src={nopfp} alt="" />}
                         </Link>
                         <div>
-                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/tvshows/${item.id}/${item.original_name}`}>
+                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/tv/${item.id}/${item.original_name}`}>
                             <p className='searchtitle'>{item.original_name}</p>
                         </Link>    
                             <p className='searchoverview'>{item.overview}</p>

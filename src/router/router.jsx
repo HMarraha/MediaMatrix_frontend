@@ -11,28 +11,6 @@ import Description from '../Components/UserLayout/Description'
 import Profile from '../Components/UserLayout/Profile'
 const router = createBrowserRouter([
     {
-        path: '/',
-        element: <GuestLayout />,
-        children: [
-            {
-                path: '/',
-                element: <Navigate to="/home"/>
-            },
-            {
-                path:'/home',
-                element: <GuestHome />
-            },
-            {
-                path:'/login',
-                element: <Login />
-            },
-            {
-                path:'/signup',
-                element: <Signup />
-            },
-        ]
-    },
-    {
         path: '*',
         element: <NotFound/>,
     },
@@ -65,7 +43,29 @@ const router = createBrowserRouter([
                 element: <Profile/>
             }
         ]
-    }
+    },
+    {
+        path: '/',
+        element: <GuestLayout />,
+        children: [
+            {
+                path: '/',
+                element: <Navigate to="/home"/>
+            },
+            {
+                path:'/home',
+                element: <GuestHome />
+            },
+            {
+                path:'/login',
+                element: <Login />
+            },
+            {
+                path:'/signup',
+                element: <Signup />
+            },
+        ]
+        },
 ])
 
 export default router
