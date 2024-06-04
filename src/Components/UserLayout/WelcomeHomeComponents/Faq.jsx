@@ -30,12 +30,12 @@ const Faq = () => {
   return (
     <>
         <div id="faqid" className="faq-container">
-                <h1>FAQ</h1>
+                <h1 style={{color: 'white'}}>FAQ</h1>
            {data.map((item,i) => (
             <div key={i} className="question-container">
             <div className="question">
                 <h4>{item.question}</h4>
-                <button onClick={() => handleShowAnswer(i)} style={{background: 'none', border: 'none',cursor: 'pointer'}}><i>{showAnswer === i ? <FaTimes size='1.5rem' /> : <FaPlus size='1.5rem' />}</i></button>
+                <button onClick={() => handleShowAnswer(i)} style={{background: 'none', border: 'none',cursor: 'pointer'}}><i>{showAnswer === i ? <FaTimes size='1.5rem' color='#BE3144'/> : <FaPlus size='1.5rem' color='#BE3144'/>}</i></button>
             </div>
             <div className={showAnswer === i ? 'answer' : 'noanswer'}>
                 {item.answer}

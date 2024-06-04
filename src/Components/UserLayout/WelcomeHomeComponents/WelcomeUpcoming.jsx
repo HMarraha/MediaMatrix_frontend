@@ -13,7 +13,10 @@ const WelcomeUpcoming = () => {
    return (
     <>
     <div className='moviecardscontainer'>
-        <h1>Upcoming :</h1>    
+             <div className="headline">
+                <div className='redbar'></div>
+                <h1>Upcoming in theater:</h1>
+            </div>   
         <div className="card">
             {movieCards?.map(({id,poster_path,title,release_date,original_title}) => (
                 <div className='moviecard' key={id}>

@@ -1,0 +1,65 @@
+.supersearch {
+    text-align: center;
+    h1 {
+      @include font(($primaryFont,$backupFont),2rem);
+      margin-top: 2rem;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+    }
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      width: 80%;
+    }
+    Button {
+      padding-inline: 1rem;
+      @include font(($primaryFont,$backupFont),1rem);
+      color: white;
+      border-radius: 4px;
+      background-color: #111926;
+      cursor: pointer;
+      &:hover {
+        background-color: #192538;
+      }
+    }
+    .results {
+      width: 80%;
+      margin: auto;
+      margin-top: 2rem;
+      text-align: center;
+      .result-item {
+        background-color: #020916;
+        color: white;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        @include flex(start,center,2rem,row);
+        h2 {
+          @include font(($primaryFont,$backupFont),2rem);
+          color: white;
+          text-align: center;
+        }
+        p {
+            @include font(($primaryFont,$backupFont),1.2rem);
+          color: white;
+          text-align: center;
+        }
+        img {
+          width: 15rem;
+          border-radius: 10px;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+.supersearchchoice {
+  text-align: center;
+  Button {
+    background-color: $red;
+    @include font(($primaryFont,$backupFont),1rem);
+    margin-right: 1rem;
+  }
+}

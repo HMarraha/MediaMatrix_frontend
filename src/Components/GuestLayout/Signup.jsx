@@ -80,7 +80,7 @@ const SignupForm = () => {
                 />
              
         <button type="submit">Signup</button>
-        <Link to='/login' style={{textDecoration: 'none',color:'black'}}><p>Already have an account? Login now!</p></Link>
+        <Link to='/login' style={{textDecoration: 'none',color:'black'}}><p>Already have an account? <span style={{color: '#BE3144'}}>Login now!</span></p></Link>
       </form>
     </div>
   );

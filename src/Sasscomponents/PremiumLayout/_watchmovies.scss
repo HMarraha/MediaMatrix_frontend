@@ -1,0 +1,127 @@
+.movieframe {
+    text-align: center;
+    img {
+        filter: brightness(60%);
+    }
+    h1 {
+        @include font(($primaryFont,$backupFont),2rem);
+        margin-top: 2rem;
+        color: white;
+        text-shadow: 2px 2px 5px black;
+    }
+    p {
+        @include font(($primaryFont,$backupFont),1.2rem);
+        width: 60%;
+        margin: auto;
+        margin-top: 2rem;
+        color: white;
+        text-shadow: 2px 2px 5px black;
+    }
+}
+.watchmoviesflex {
+    @include flex(space-evenly,center,2rem,row);
+    width: 100%;
+    background-color: #020916;
+    padding: 1rem;
+    img {
+        width: 12.5rem;
+        border-radius: 10px;
+    }
+    .movieinformation {
+        .movietitleflex {
+            @include flex(space-between,center,2rem,row);
+            .watchbuttons {
+                @include flex(center,center,2rem,row);
+            }
+            h1 {
+                @include font(($primaryFont,$backupFont),2rem);
+                color: white;
+                text-shadow: 2px 2px 5px black;
+            }
+            Button {
+                margin-right: 1px;
+            }
+        }
+    }
+    .runtimeflex {
+        @include flex(center,center,2rem,row);
+        @include font(($primaryFont,$backupFont),1rem);
+        color: white;
+        text-shadow: 2px 2px 5px black;
+        .voteflex {
+            @include flex(center,center,0.2rem,row);
+        }
+    }
+    p {
+        @include font(($primaryFont,$backupFont),1rem);
+        color: white;
+        font-weight: 400;
+    }
+    .moviedetails {
+        .details {
+            @include flex(start,center,2rem,row);
+        }
+    }
+}
+.umayalsolike {
+    background-color: #020916;
+    color: white;
+    @include font(($primaryFont,$backupFont),1rem);
+    padding: 1rem;
+}
+.similarflex {
+    @include flex(center,start,2rem,row);
+    background-color: #020916;
+    .similarmovies {
+        width: 50%;
+        padding: 1rem;
+        img {
+            width: 10rem;
+            border-radius: 10px;
+        }
+        h3 {
+            @include font(($primaryFont,$backupFont),1rem);
+            color: white;
+        }
+    }
+}
+.episodebuttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 1rem;
+    gap: 10px;
+    .episodebutton {
+        border-radius: 30px;
+        white-space: nowrap;
+        background: #111926 ;
+        text-align: left;
+        line-height: 20px;
+        padding: 9px 20px;
+        color: #6c757d ;
+        border: 1px solid #111926 ;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @include font(($primaryFont,$backupFont),1rem);
+        font-weight: 400;
+        cursor: pointer;
+        transition: 0.5s ease;
+        &:hover {
+            background-color: #192538;
+        }
+    }
+    .selected {
+        border: 1px solid $red;
+        color: $red;
+    }
+}
+.manual-select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: #111926;
+    color: #6c757d;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    outline: none;
+  }

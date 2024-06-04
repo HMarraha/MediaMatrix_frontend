@@ -36,7 +36,10 @@ const WelcomeTvShowsCards = () => {
    return (
     <>
     <div className='moviecardscontainer'>
-        <h1>Tv Shows :</h1>
+            <div className="headline">
+                <div className='redbar'></div>
+                <h1>Tv Shows:</h1>
+            </div>
         <div className='moviebuttons'>
             <Button onClick={handleOnTheAir} variant='contained' color={firstColor}>On The Air</Button>
             <Button onClick={handlePopular} variant='contained' color={secondColor}>Popular</Button>

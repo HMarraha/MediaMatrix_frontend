@@ -1,0 +1,108 @@
+.premimgcontainer {
+    position: relative;
+    .premimg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40rem;
+        filter: brightness(40%);
+        z-index: -1;
+    }
+    .premimgtxt {
+        z-index: 999;
+        text-align: center;
+        padding-top: 10rem;
+        h1 {
+            @include font(($primaryFont,$backupFont),4rem);
+            color: white;
+        }
+        p {
+            @include font(($primaryFont,$backupFont),2rem);
+            color: white;
+        }
+    }
+    button {
+        cursor: pointer;
+        padding: 1rem;
+        background-color: $red;
+        color: white;
+        border-radius: 10px;
+        @include font(($primaryFont,$backupFont),2rem);
+        margin-top: 3rem;
+        text-shadow: 2px 2px 3px black;
+        border: 1px solid $red;
+    }
+}
+.benefits {
+    text-align: center;
+    margin-top: 20rem;
+    h1 {
+        @include font(($primaryFont,$backupFont),2rem);
+        color: white;
+    }
+    .benefitsflex {
+        @include flex(space-evenly,center,2rem,row);
+        width: 60%;
+        margin: auto;
+        margin-top: 2rem;
+        .benefit {
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px black;
+            background-color: $firstgray;
+            padding: 1rem;
+            p {
+                @include font(($primaryFont,$backupFont),1rem);
+                color: white;
+            }
+        }
+    }
+    .streaminglogos {
+        margin-top: 2rem;
+    }
+}
+.plans {
+    text-align: center;
+    @include font(($primaryFont,$backupFont),3rem);
+    color: white;
+}
+.prices {
+    margin-top: 2rem;
+    @include flex(space-evenly,center,2rem,row);
+    .pricing {
+        border: 5px solid $red;
+        border-radius: 10px;
+        background-color: #192538;
+        text-align: center;
+        padding: 3rem;
+        h1 {
+            @include font(($primaryFont,$backupFont),3rem);
+            color: white;
+            text-shadow: 2px 2px 5px black
+        }
+        h2 {
+            @include font(($primaryFont,$backupFont),1.5rem); 
+            color: white;
+        }
+        p {
+            @include font(($primaryFont,$backupFont),1rem);
+            color: $red;
+            text-shadow: 2px 2px 5px black;
+        }
+        ul {
+            @include font(($primaryFont,$backupFont),1rem);
+            margin-block: 1rem;
+            color: white;
+        }
+        button {
+            background-color: $red;
+            color: black;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 10px;
+            @include font(($primaryFont,$backupFont),1rem);
+            cursor: pointer;
+        }
+    }
+}

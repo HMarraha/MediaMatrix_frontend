@@ -1,0 +1,245 @@
+.profile {
+    @include flex(center,top,10rem,row);
+    .sidebar {
+        filter: drop-shadow(8px 8px 10px  gray);
+        @include flex(top,start,0,column);
+        width: 30%;
+        margin-right: auto;
+        margin-top: 4rem;
+        height: 50vh;
+        margin-left: 2rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        .sidebuttoncontainer {
+            width: 80%;
+            margin-inline: auto;
+            margin-top: 2rem;
+            Button {
+                border: none;
+                padding: 1rem;
+                width: 100%;
+            }
+        }
+    }
+    .dashboard {
+        width: 80%;
+        margin-right: 10rem;
+        margin-top: 4rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        .title {
+            @include font(($secondaryFont,$backupFont),2rem);
+            text-align: center;
+            margin-top: 1rem;
+            color: white;
+        }
+    }
+    .moviestvshows {
+        @include flex(center,top,4rem,row);
+        padding: 2rem;
+        @include font(($primaryFont,$backupFont),1rem);
+        .moviesdashboard {
+            @include flex(center,top,2rem,row);
+            background-color: #192538;
+            padding: 2rem;
+            h1 {
+                font-weight: 400;
+                color: white;
+            }
+            p {
+                color: white;
+                font-size: 1.5rem;
+            }
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+        }
+        .tvshowsdashboard {
+            @include flex(center,top,2rem,row);
+            background-color: #192538;
+            padding: 2rem;
+            h1 {
+                font-weight: 400;
+                color: white;
+            }
+            p {
+                color: white;
+                font-size: 1.5rem;
+            }
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+        }
+    }
+    .list {
+        font-size: 5rem;
+        border-radius: 10rem;
+        padding: 1rem;
+        background-color: rgb(110, 216, 230);
+        color: white;
+        margin-top: 0.5rem;
+    }
+    .list2 {
+        font-size: 5rem;
+        border-radius: 10rem;
+        padding: 1rem;
+        background-color: orange;
+        color: white;
+        margin-top: 0.5rem;
+    }
+    .list3 {
+        font-size: 5rem;
+        border-radius: 10rem;
+        padding: 1rem;
+        background-color: purple;
+        color: white;
+        margin-top: 0.5rem;
+    }
+    .wlists {
+        @include flex(center,center,2rem,row);
+        padding: 2rem;
+        .watchedlist,.watchinglist,.wanttowatchlist {
+            @include flex(center,top,2rem,row);
+            @include font(($primaryFont,$backupFont),0.8rem);
+            background-color: #192538;
+            padding: 2rem;
+            h1 {
+                font-weight: 400;
+                color: white;
+            }
+            p {
+                color: white;
+                font-size: 1.5rem;
+            }
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+        }
+    }
+    .movieslist {
+        width: 90%;
+        box-shadow: 5px 5px 8px gray;
+        margin-right: 10rem;
+        margin-top: 4rem;
+        overflow-y: scroll;
+        height: 120vh;
+    }
+    .tvshowslist {
+        width: 80%;
+        box-shadow: 5px 5px 8px gray;
+        margin-right: 10rem;
+        margin-top: 4rem;
+    }
+    .titles {
+        @include font(($secondaryFont,$backupFont),2rem);
+        text-align: center;
+        margin-top: 1rem;
+        color: white;
+    }  
+}
+.tableheads {
+    width: 95%;
+    @include flex(space-between,center,2rem,row);
+    @include font(($secondaryFont,$backupFont),1rem);
+    margin: auto;
+    margin-top: 2rem;
+    color: white;
+    .tableheadsoverview {
+        margin-right: 19rem;
+    }
+    .tableheadstitle {
+        margin-right: 28rem;
+    }
+}
+.addmovie {
+    width: 15%;
+    margin: auto;
+}
+.addedmoviedetails {
+    @include flex(space-between,center,2rem,row);
+    @include font(($primaryFont,$backupFont),0.9rem);
+    color: white;
+    border-bottom: 1px solid black;
+    padding-bottom: 2rem;
+    margin-inline: 1rem;
+    margin-top: 2rem;
+    img {
+        width: 4rem;
+    }
+    .actions {
+        @include flex(center,center,0,row);
+    }
+}
+.nomovieadded {
+    text-align: center;
+    @include font(($primaryFont,$backupFont),3rem);
+    margin-top: 4rem;
+    color: white;
+}
+@media (max-width: 1550px) {
+    .profile {
+        @include flex(center,center,2rem,column);
+        .movieslist {
+            width: 80%;
+            margin: 2rem auto;
+        }
+        .sidebar {
+            width: 80%;
+            margin: 2rem auto;
+            height: auto;
+            .sidebuttoncontainer {
+                width: 50%;
+                margin: 2rem auto;
+            }
+        }
+        .dashboard {
+            width: 80%;
+            margin: 2rem auto;
+        }
+    }
+}
+@media (max-width: 1150px) {
+    .profile {
+        .moviestvshows {
+            @include flex(center,center,2rem,column);
+            .moviesdashboard,.tvshowsdashboard {
+                width: 100%;
+            }
+        }
+        .wlists {
+            @include flex(center,center,2rem,column);
+            .watchinglist,.watchedlist,.wanttowatchlist {
+                @include flex(center,top,2rem,row);
+                @include font(($primaryFont,$backupFont),0.8rem);
+                width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: 505px) {
+    .profile {
+        .sidebar {
+            .sidebuttoncontainer {
+                width: 90%
+            }
+        }
+        .moviestvshows {
+            .moviesdashboard,.tvshowsdashboard {
+                @include flex(center,top,1rem,row);
+                @include font(($primaryFont,$backupFont),0.6rem);
+            }
+        }
+        .wlists {
+            .watchinglist,.watchedlist,.wanttowatchlist {
+                @include flex(center,top,1rem,row);
+                @include font(($primaryFont,$backupFont),0.6rem);
+            }
+        }
+    }
+}
+@media (max-width: 1225px) {
+    .addmovie {
+        width: 50%;
+    }
+    .addedmoviedetails {
+        @include flex(center,center,2rem,column)
+    }
+    .tableheads {
+        display: none;
+    }
+}

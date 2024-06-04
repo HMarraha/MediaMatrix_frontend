@@ -8,14 +8,17 @@ import Star from "@mui/icons-material/Star"
 
 import {Snackbar, Alert } from '@mui/material'
 import { forwardRef } from 'react'
+import axiosClient from '../../Axios/axios'
+import { useStateContext } from '../../Contextapi/contextProvider'
 const SnackbarAlert = forwardRef(
     function SnackbarAlert(props,ref) {
         return <Alert elevation={6} ref={ref} {...props} />
     }
 )
-const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,Large,IMG_BASE_URL,backdrop_path,poster_path,original_title,original_language,genres,overview,runtime,release_date,vote_average,status,revenue,budget,production_companies,production_countries}) => {
+const Moviedescription = ({id,reviews,itsPosters,itsBackdrops,media,cast,homepage,Large,IMG_BASE_URL,backdrop_path,poster_path,original_title,original_language,genres,overview,runtime,release_date,vote_average,status,revenue,budget,production_companies,production_countries}) => {
   const IMG_BASE_URL_SMALL = 'https://image.tmdb.org/t/p/w200'
   const YOUTUBE_URL = 'https://www.youtube.com/embed/'
+  const {setWatchedMovies,setWatchingMovies,setWantToWatchMovies} = useStateContext()
   const [showTrailer,setShowTrailer] = useState(true)
   const [showPosters,setShowPosters] = useState(false)
   const [showBackdrop,setShowBackdrop] = useState(false)
@@ -28,7 +31,28 @@ const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,L
         }
         setIsSnackbarVisible(false)
     }
-  
+  const addMovie = async (e,type,movieId,posterPath,title,overview) => {
+    e.preventDefault()
+    try {
+        let response;
+        if (type === 'watched') {
+          response = await axiosClient.post('/watched-movies', { movieId, title, overview, posterPath });
+          setWatchedMovies(response.data);
+        } else if (type === 'watching') {
+          response = await axiosClient.post('/watching-movies', { movieId, title, overview, posterPath });
+          setWatchingMovies(response.data);
+        } else if (type === 'wanttowatch') {
+          response = await axiosClient.post('/want-to-watch-movies', { movieId, title, overview, posterPath });
+          setWantToWatchMovies(response.data);
+        }
+        setIsSnackbarVisible(true);
+        setIsError(false);
+      } catch (error) {
+        console.error(error);
+        setIsError(true);
+        setIsSnackbarVisible(true);
+      }
+}
   const trailer = () => {
     setShowTrailer(true)
     setShowPosters(false)
@@ -82,13 +106,13 @@ const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,L
                  <p>Add to a List:</p>
                 </div>
                 <div className="buttons">
-                  <form onSubmit={(e) => addMovie(e,poster_path,original_title,overview)}>
+                  <form onSubmit={(e) => addMovie(e,'watched',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatched</Button>
                   </form>
-                  <form onSubmit={(e) => addWatchingMovie(e,poster_path,original_title,overview)}>
+                  <form onSubmit={(e) => addMovie(e,'watching',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatching</Button>
                   </form>
-                  <form onSubmit={(e) => addWantToWatchMovie(e,poster_path,original_title,overview)}>
+                  <form onSubmit={(e) => addMovie(e,'wanttowatch',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWant To Watch</Button>
                   </form>
                 </div>
@@ -183,30 +207,18 @@ const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,L
               </div>
             </div>
         </div>
-        {isError ? 
-                <Snackbar open={isSnackbarVisible} 
-                          autoHideDuration={4000} 
-                          onClose={closeSnackbar} 
-                          anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'center'
-                          }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='error'>
-                        Movie Already Added!
-                    </SnackbarAlert>
-                </Snackbar>
-                : <Snackbar open={isSnackbarVisible}
-                            autoHideDuration={4000}
-                            onClose={closeSnackbar} 
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'center'
-                              }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='success'>
-                        Movie Added Successfully!
-                    </SnackbarAlert>
-                </Snackbar>
-                }
+        <Snackbar 
+        open={isSnackbarVisible} 
+        autoHideDuration={6000} 
+        onClose={closeSnackbar} 
+        anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center'
+        }}>
+        <SnackbarAlert onClose={closeSnackbar} severity={isError ? 'error' : 'success'}>
+          {isError ? `"${original_title}" is already in the list!` : `"${original_title}" has been added successfully!`}
+        </SnackbarAlert>
+      </Snackbar>
       </>
     )
   }
@@ -239,13 +251,13 @@ const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,L
                  <p>Add to a List:</p>
                 </div>
                 <div className="buttons">
-                <form onSubmit={(e) => addMovie(e,poster_path,original_title,overview)}>
+                <form onSubmit={(e) => addMovie(e,'watched',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatched</Button>
                   </form>
-                  <form onSubmit={(e) => addWatchingMovie(e,poster_path,original_title,overview)}>
+                  <form onSubmit={(e) => addMovie(e,'watching',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatching</Button>
                   </form>
-                  <form onSubmit={(e) => addWantToWatchMovie(e,poster_path,original_title,overview)}>
+                  <form onSubmit={(e) => addMovie(e,'wanttowatch',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWant To Watch</Button>
                   </form>
                 </div>
@@ -340,30 +352,18 @@ const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,L
               </div>
             </div>
         </div>
-        {isError ? 
-                <Snackbar open={isSnackbarVisible} 
-                          autoHideDuration={4000} 
-                          onClose={closeSnackbar} 
-                          anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'center'
-                          }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='error'>
-                        Movie Already Added!
-                    </SnackbarAlert>
-                </Snackbar>
-                : <Snackbar open={isSnackbarVisible}
-                            autoHideDuration={4000}
-                            onClose={closeSnackbar} 
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'center'
-                              }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='success'>
-                        Movie Added Successfully!
-                    </SnackbarAlert>
-                </Snackbar>
-                }
+        <Snackbar 
+        open={isSnackbarVisible} 
+        autoHideDuration={6000} 
+        onClose={closeSnackbar} 
+        anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center'
+        }}>
+        <SnackbarAlert onClose={closeSnackbar} severity={isError ? 'error' : 'success'}>
+          {isError ? `"${original_title}" is already in the list!` : `"${original_title}" has been added successfully!`}
+        </SnackbarAlert>
+      </Snackbar>
       </>
     )
   }
@@ -396,13 +396,13 @@ const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,L
                  <p>Add to a List:</p>
                 </div>
                 <div className="buttons">
-                <form onSubmit={(e) => addMovie(e,poster_path,original_title,overview)}>
+                <form onSubmit={(e) => addMovie(e,'watched',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatched</Button>
                   </form>
-                  <form onSubmit={(e) => addWatchingMovie(e,poster_path,original_title,overview)}>
+                  <form onSubmit={(e) => addMovie(e,'watching',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatching</Button>
                   </form>
-                  <form onSubmit={(e) => addWantToWatchMovie(e,poster_path,original_title,overview)}>
+                  <form onSubmit={(e) => addMovie(e,'wanttowatch',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWant To Watch</Button>
                   </form>
                 </div>
@@ -492,30 +492,18 @@ const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,L
               </div>
             </div>
         </div>
-        {isError ? 
-                <Snackbar open={isSnackbarVisible} 
-                          autoHideDuration={4000} 
-                          onClose={closeSnackbar} 
-                          anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'center'
-                          }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='error'>
-                        Movie Already Added!
-                    </SnackbarAlert>
-                </Snackbar>
-                : <Snackbar open={isSnackbarVisible}
-                            autoHideDuration={4000}
-                            onClose={closeSnackbar} 
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'center'
-                              }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='success'>
-                        Movie Added Successfully!
-                    </SnackbarAlert>
-                </Snackbar>
-                }
+        <Snackbar 
+        open={isSnackbarVisible} 
+        autoHideDuration={6000} 
+        onClose={closeSnackbar} 
+        anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center'
+        }}>
+        <SnackbarAlert onClose={closeSnackbar} severity={isError ? 'error' : 'success'}>
+          {isError ? `"${original_title}" is already in the list!` : `"${original_title}" has been added successfully!`}
+        </SnackbarAlert>
+      </Snackbar>
       </>
     )
   }
@@ -548,13 +536,13 @@ const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,L
                  <p>Add to a List:</p>
                 </div>
                 <div className="buttons">
-                <form onSubmit={(e) => addMovie(e,poster_path,original_title,overview)}>
+                <form onSubmit={(e) => addMovie(e,'watched',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatched</Button>
                   </form>
-                  <form onSubmit={(e) => addWatchingMovie(e,poster_path,original_title,overview)}>
+                  <form onSubmit={(e) => addMovie(e,'watching',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatching</Button>
                   </form>
-                  <form onSubmit={(e) => addWantToWatchMovie(e,poster_path,original_title,overview)}>
+                  <form onSubmit={(e) => addMovie(e,'wanttowatch',id,poster_path,original_title,overview)}>
                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWant To Watch</Button>
                   </form>
                 </div>
@@ -644,30 +632,19 @@ const Moviedescription = ({reviews,itsPosters,itsBackdrops,media,cast,homepage,L
               </div>
             </div>
         </div>
-        {isError ? 
-                <Snackbar open={isSnackbarVisible} 
-                          autoHideDuration={4000} 
-                          onClose={closeSnackbar} 
-                          anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'center'
-                          }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='error'>
-                        Movie Already Added!
-                    </SnackbarAlert>
-                </Snackbar>
-                : <Snackbar open={isSnackbarVisible}
-                            autoHideDuration={4000}
-                            onClose={closeSnackbar} 
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'center'
-                              }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='success'>
-                        Movie Added Successfully!
-                    </SnackbarAlert>
-                </Snackbar>
-                }
+        <Snackbar 
+        open={isSnackbarVisible} 
+        autoHideDuration={6000} 
+        onClose={closeSnackbar} 
+        anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center'
+        }}>
+        <SnackbarAlert onClose={closeSnackbar} severity={isError ? 'error' : 'success'}>
+          {isError ? `"${original_title}" is already in the list!` : `"${original_title}" has been added successfully!`}
+        </SnackbarAlert>
+      </Snackbar>
+                
       </>
     )
   }

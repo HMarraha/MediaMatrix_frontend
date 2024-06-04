@@ -2,8 +2,19 @@
     width: 80%;
     margin: auto;
     margin-top: 2rem;
-    h1 {
-        @include font(($primaryFont,$backupFont),2rem)
+    .headline {
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+        @include flex(flex-start,center,1rem,row);
+        .redbar {
+            padding-block: 2rem;
+            padding-inline: 0.2rem;
+            background-color: $red;
+        }
+        h1 {
+            @include font(('Cairo',sans-serif),2rem);
+            color: white;
+        }
     }
     .moviebuttons {
         margin-left: 1rem;
@@ -31,11 +42,13 @@
             .movietitle {
                 @include font(('Cairo',sans-serif),1rem);
                 text-decoration: none;
+                color: white;
             }
             .release {
                 @include font(('Cairo',sans-serif),0.9rem);
                 font-weight: 400;
                 text-decoration: none;
+                color: white;
             }
         }
     }

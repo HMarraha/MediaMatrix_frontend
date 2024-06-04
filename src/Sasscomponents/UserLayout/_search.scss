@@ -6,7 +6,7 @@
     @include font(($primaryFont,$backupFont),2rem);
     width: 20%;
     margin: 2rem auto;
-   
+    color: white;
 }
 .searchmovies {
     @include flex(start,top,2rem,row);
@@ -14,27 +14,30 @@
     margin: auto;
     margin-block: 2rem;
     .searchtitle {
-        @include font(($primaryFont,$backupFont),1.25rem)
+        @include font(($primaryFont,$backupFont),1.25rem);
+        color: white;
     }
     .searchoverview {
-        @include font(($primaryFont,$backupFont),1rem)
+        @include font(($primaryFont,$backupFont),1rem);
+        color: white
     }
     .buttons {
         @include flex(center,center,2rem,row);
         margin-top: 2rem;
         Button {
             margin-left: 2rem;
+            background-color: $red;
         }
     }
 }
 .sidebar {
-    filter: drop-shadow(8px 8px 10px  gray);
     @include flex(top,start,0,column);
     width: 30%;
     margin-right: auto;
     margin-top: 4rem;
     height: 50vh;
     margin-left: 2rem;
+    background-color: #192538;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     .sidebuttoncontainer {
         width: 80%;
@@ -44,6 +47,7 @@
             border: none;
             padding: 1rem;
             width: 100%;
+            color: $white;
         }
     }
 }
@@ -58,11 +62,13 @@
     margin-top: 2rem;
     .searchinput {
         width: 80%;
+        background-color: white;
     }
     .searchbutton {
         margin-left: 2rem;
         min-height: 3.4rem;
         padding-inline: 2rem;
+        background-color: $red;
     }
 }
 .success {

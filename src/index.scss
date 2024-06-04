@@ -3,7 +3,12 @@
 @import "./Sasscomponents/UserLayout/welcome";
 @import "./Sasscomponents/GuestHome/signup";
 @import "./Sasscomponents/GuestHome/login";
-@import "./Sasscomponents//UserLayout/moviedescription";
+@import "./Sasscomponents/PremiumLayout/superseach";
+@import "./Sasscomponents/PremiumLayout/watchmovies";
+@import "./Sasscomponents/PremiumLayout/watch";
+@import "./Sasscomponents/UserLayout/profile";
+@import "./Sasscomponents/UserLayout/prem";
+@import "./Sasscomponents/UserLayout/moviedescription";
 @import "./Sasscomponents/UserLayout/search";
 @import "./Sasscomponents/UserLayout/faq";
 @import "./Sasscomponents/UserLayout/welcomemoviescards";
@@ -27,7 +32,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    background-color: #D3D6DB;
+    background-color: #020916;
 }
 
 

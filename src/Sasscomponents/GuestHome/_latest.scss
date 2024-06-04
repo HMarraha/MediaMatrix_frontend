@@ -13,6 +13,7 @@
         }
         h1 {
             @include font(('Cairo',sans-serif),2rem);
+            color: white;
         }
     }
     .cards {
@@ -36,11 +37,13 @@
                 .movietitle {
                     @include font(('Cairo',sans-serif),1rem);
                     text-decoration: none;
+                    color: white
                 }
                 .release {
                     @include font(('Cairo',sans-serif),0.9rem);
                     font-weight: 400;
                     text-decoration: none;
+                    color: white;
                 }
             }
     }

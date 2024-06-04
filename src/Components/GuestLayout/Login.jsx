@@ -56,7 +56,7 @@ const LoginForm = () => {
         <button type="submit" className="login-button">
           Sign in
         </button>
-        <Link to='/signup' style={{textDecoration: 'none'}}><p>Don't have an account? click here to signup!</p></Link>
+        <Link to='/signup' style={{textDecoration: 'none'}}><p>Don't have an account? <span style={{color: '#BE3144'}}>click here to signup!</span></p></Link>
       </form>
     </div>
   );

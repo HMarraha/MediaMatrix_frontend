@@ -7,13 +7,13 @@
     margin: auto;
     margin-top: 2vh;
     padding-block: 2rem;
-    background-color: white;
+    background-color: #141e2d;
     box-shadow: 2px 2px 5px black;
     border-radius: 10px;
-    filter: drop-shadow(8px 8px 10px gray);
     text-align: center;
     p {
         margin-top: 1rem;
+        color: #6c757d;
     }
     img {
         width: 34%;
@@ -21,17 +21,19 @@
     }
     h2 {
         margin-top: 1rem;
-        @include font(($primaryFont,$backupFont),2rem)
+        @include font(($primaryFont,$backupFont),2rem);
+        color: #6c757d;
     }
     .signup-form {
-      background-color: #f0f0f0;
+      background-color: #192538;
       padding: 1.25rem;
       display: flex;
       flex-direction: column;
-      width: 300px;
+      width: 500px;
       margin-top: 1rem;
       border-radius: 10px;
       box-shadow: 2px 2px 5px black;
+      filter: brightness(100%);
       label {
         color: $red;
         @include font(($primaryFont,$backupFont),1rem);

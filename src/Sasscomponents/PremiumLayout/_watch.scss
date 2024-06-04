@@ -1,0 +1,43 @@
+.watchcontainer {
+    position: relative;
+    text-align: center;
+    padding-bottom: 30rem;
+    .stockimage {
+        width: 100%;
+        filter: brightness(30%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    h1 {
+        @include font(($primaryFont,$backupFont),2rem);
+        padding-top: 7rem;
+        color: white;
+        text-shadow: 2px 2px 5px black;
+    }
+    p {
+        @include font(($primaryFont,$backupFont),1.5rem);
+        padding-top: 4rem;
+        color: white;
+        text-shadow: 2px 2px 5px black;
+    }
+    .watchbuttons {
+        @include flex(center,center,1rem,row);
+        Button {
+            background-color: $blue;
+            color: white;
+            padding-inline: 2rem;
+            padding-block: 1rem;
+            border-radius: 10px;
+            @include font(($primaryFont,$backupFont),1rem);
+            cursor: pointer;
+            transition: 1s ease;
+            text-shadow: 2px 2px 5px black;
+            &:hover {
+                background-color: $red;
+                color: $firstgray;
+            }
+        }
+    }
+}

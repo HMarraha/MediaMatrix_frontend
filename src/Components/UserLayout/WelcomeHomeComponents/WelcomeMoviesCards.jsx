@@ -37,7 +37,10 @@ const WelcomeMoviesCards = () => {
    return (
     <>
     <div className='moviecardscontainer'>
-        <h1>Movies :</h1>
+            <div className="headline">
+                <div className='redbar'></div>
+                <h1>Movies</h1>
+            </div>
         <div className='moviebuttons'>
             <Button onClick={handleNowPlaying} variant='contained' color={firstColor}>Now Playing</Button>
             <Button onClick={handlePopular} variant='contained' color={secondColor}>Popular</Button>

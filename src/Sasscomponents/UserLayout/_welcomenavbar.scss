@@ -1,6 +1,5 @@
 .profiledisplay {
     @include flex(space-between,center,5px,row);
-    box-shadow: 2px 2px 5px black;
     border-radius: 10px;
     cursor: pointer;
     padding: 0.5rem 2rem;
@@ -27,7 +26,7 @@
 }
 .profilename {
     @include font(($secondaryFont,$backupFont),1.5rem);
-    color: white;
+    color: $red;
     text-shadow: 2px 2px 5px black;
 }
 .logoutinfo {
@@ -35,4 +34,8 @@
 }
 .profileemail {
     color: white;
+}
+.premiumbuttons {
+    @include flex(center,center,1rem,row);
+    margin-right: 10rem;
 }

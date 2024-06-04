@@ -7,26 +7,26 @@
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    background-color: white;
-    box-shadow: 2px 2px 5px black;
+    background-color: #141e2d;
     border-radius: 10px;
-    filter: drop-shadow(8px 8px 10px gray);
     text-align: center;
     img {
         width: 34%;
         border-radius: 10px;
     }
     h2 {
-        @include font(($primaryFont,$backupFont),2rem)
+        @include font(($primaryFont,$backupFont),2rem);
+        color: #6c757d;
     }
     .login-form {
-      background-color: #f0f0f0;
+      background-color: #192538;
       padding: 20px;
       border-radius: 5px;
       box-shadow: 2px 2px 5px black;
+      width: 500px;
       p {
         margin-top: 1rem;
-        color: black;
+        color: #6c757d;
       }
       label {
         color: $red;

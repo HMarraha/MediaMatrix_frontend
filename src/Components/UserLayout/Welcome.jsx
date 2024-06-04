@@ -19,7 +19,7 @@ const Welcome = () => {
    
     useEffect(()=> {
       useFetch('/movie/top_rated?language=en-US&page=1',setHeroMovie)
-    })
+    },[])
     
   return (
     <>
@@ -28,7 +28,6 @@ const Welcome = () => {
     <WelcomeTvShowsCards/>
     <Faq/>
     <WelcomeUpcoming/>
-    <WelcomeFooter/>
     </>
   )
 }

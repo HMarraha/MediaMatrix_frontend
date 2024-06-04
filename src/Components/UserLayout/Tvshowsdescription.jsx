@@ -8,13 +8,16 @@ import Star from "@mui/icons-material/Star"
 import {Snackbar, Alert } from '@mui/material'
 import { forwardRef } from 'react'
 import Link from '@mui/icons-material/Link'
+import axiosClient from '../../Axios/axios'
+import { useStateContext } from '../../Contextapi/contextProvider'
 const SnackbarAlert = forwardRef(
     function SnackbarAlert(props,ref) {
         return <Alert elevation={6} ref={ref} {...props} />
     }
 )
-const Tvshowsdescription = ({seasons,last_episode_to_air,last_air_date,reviews,revenue,budget,status,media,cast,IMG_BASE_URL,Large,backdrop_path,episode_run_time,first_air_date,genres,number_of_episodes,number_of_seasons,original_name,original_language,vote_average,poster_path,overview,homepage}) => {
+const Tvshowsdescription = ({id,seasons,last_episode_to_air,last_air_date,reviews,revenue,budget,status,media,cast,IMG_BASE_URL,Large,backdrop_path,episode_run_time,first_air_date,genres,number_of_episodes,number_of_seasons,original_name,original_language,vote_average,poster_path,overview,homepage}) => {
   const IMG_BASE_URL_SMALL = 'https://image.tmdb.org/t/p/w200' 
+  const {setWatchedTvShows,setWatchingTvShows,setWantToWatchTvShows} = useStateContext()
   const [isError,setIsError] = useState(false)
   const [isSnackbarVisible, setIsSnackbarVisible] = useState(false);
   const closeSnackbar = (event, reason) => {
@@ -23,7 +26,29 @@ const Tvshowsdescription = ({seasons,last_episode_to_air,last_air_date,reviews,r
         }
         setIsSnackbarVisible(false)
   }
- 
+  const addTvShow = async (e, type, tvshowId, posterPath, title, overview) => {
+    e.preventDefault();
+    try {
+      let response;
+      if (type === 'watched') {
+        response = await axiosClient.post('/watched-tvshows', { tvshowId, title, overview, posterPath });
+        setWatchedTvShows(response.data);
+      } else if (type === 'watching') {
+        response = await axiosClient.post('/watching-tvshows', { tvshowId, title, overview, posterPath });
+        setWatchingTvShows(response.data);
+      } else if (type === 'wantToWatch') {
+        response = await axiosClient.post('/want-to-watch-tvshows', { tvshowId, title, overview, posterPath });
+        setWantToWatchTvShows(response.data);
+      }
+      setIsSnackbarVisible(true);
+      setIsError(false);
+    } catch (error) {
+      console.error(error);
+      setIsError(true);
+      setIsSnackbarVisible(true);
+    }
+  };
+
   return (
       <>
         <div className="movie-description">
@@ -52,14 +77,14 @@ const Tvshowsdescription = ({seasons,last_episode_to_air,last_air_date,reviews,r
                  <p>Add to a List:</p>
                 </div>
                 <div className="buttons">
-                  <form onSubmit={(e) => addWatchedTvShow(e,poster_path,original_name,overview)}>
-                    <Button type='submit' className='watch' startIcon={<Add/>} variant='contained' size='large'>ًWatched</Button>
+                  <form onSubmit={(e) => addTvShow(e, 'watched', id, poster_path, original_name, overview)}>
+                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>Watched</Button>
                   </form>
-                  <form onSubmit={(e) => addWatchingTvShow(e,poster_path,original_name,overview)}>
-                    <Button type='submit' className='watch' startIcon={<Add/>} variant='contained' size='large'>ًWatching</Button> 
+                  <form onSubmit={(e) => addTvShow(e, 'watching', id, poster_path, original_name, overview)}>
+                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>Watching</Button>
                   </form>
-                  <form onSubmit={(e) => addWantToWatchTvShow(e,poster_path,original_name,overview)}>
-                    <Button type='submit' className='watch' startIcon={<Add/>} variant='contained' size='large'>ًWant To Watch</Button>
+                  <form onSubmit={(e) => addTvShow(e, 'wantToWatch', id, poster_path, original_name, overview)}>
+                    <Button type='submit' className='watch' startIcon={<Add />} variant='contained' size='large'>Want To Watch</Button>
                   </form>
                 </div>
               </div>
@@ -147,30 +172,17 @@ const Tvshowsdescription = ({seasons,last_episode_to_air,last_air_date,reviews,r
               </div>
             </div>
         </div>
-        {isError ? 
-                <Snackbar open={isSnackbarVisible} 
+        <Snackbar open={isSnackbarVisible} 
                           autoHideDuration={4000} 
                           onClose={closeSnackbar} 
                           anchorOrigin={{
                             vertical: 'bottom',
                             horizontal: 'center'
                           }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='error'>
-                        TvShow Already Added!
+                    <SnackbarAlert onClose={closeSnackbar} severity={isError ? 'error' : 'success'}>
+                        {isError ? `"${original_name}" is already in the list!`: `"${original_name}" has been added successfully!`}
                     </SnackbarAlert>
                 </Snackbar>
-                : <Snackbar open={isSnackbarVisible}
-                            autoHideDuration={4000}
-                            onClose={closeSnackbar} 
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'center'
-                              }}>
-                    <SnackbarAlert onClose={closeSnackbar} severity='success'>
-                        TvShow Added Successfully!
-                    </SnackbarAlert>
-                </Snackbar>
-        } 
       </>
     )
 }

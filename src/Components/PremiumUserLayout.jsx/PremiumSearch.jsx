@@ -9,17 +9,17 @@ import Add from '@mui/icons-material/Add'
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField'
-import axiosClient from '../../Axios/axios'
 
 import {Snackbar, Alert } from '@mui/material'
 import { forwardRef } from 'react'
+import { FaTv } from 'react-icons/fa'
 import { useStateContext } from '../../Contextapi/contextProvider'
 const SnackbarAlert = forwardRef(
     function SnackbarAlert(props,ref) {
         return <Alert elevation={6} ref={ref} {...props} />
     }
 )
-const Search = () => {
+const PremiumSearch = () => {
     const apiKey = import.meta.env.VITE_TMDB_API_KEY
     const IMG_BASE_URL_SMALL = 'https://image.tmdb.org/t/p/w200'
     const [movieList,setMovieList] = useState(true)
@@ -30,7 +30,6 @@ const Search = () => {
     const [searchTerm,setSearchTerm] = useState('')
     const [searching,setSearching] = useState(false)
     const [page,setPage] = useState(1)
-    const {setWatchedMovies,setWatchingMovies,setWantToWatchMovies,setWatchedTvShows,setWatchingTvShows,setWantToWatchTvShows} = useStateContext()
     const [tvSearchTerm,setTvSearchTerm] = useState('')
     const [tvSearchResults, setTvSearchResults] = useState([])
     const [tvSearching,setTvSearching] = useState(false)
@@ -46,50 +45,6 @@ const Search = () => {
         }
         setIsSnackbarVisible(false)
     }
-    const addMovie = async (e,type,{movieId,title,overview,posterPath}) => {
-        e.preventDefault()
-        try {
-            let response;
-            if (type === 'watched') {
-              response = await axiosClient.post('/watched-movies', { movieId, title, overview, posterPath });
-              setWatchedMovies(response.data);
-            } else if (type === 'watching') {
-              response = await axiosClient.post('/watching-movies', { movieId, title, overview, posterPath });
-              setWatchingMovies(response.data);
-            } else if (type === 'wantToWatch') {
-              response = await axiosClient.post('/want-to-watch-movies', { movieId, title, overview, posterPath });
-              setWantToWatchMovies(response.data);
-            }
-            setIsSnackbarVisible(true);
-            setIsError(false);
-          } catch (error) {
-            console.error(error);
-            setIsError(true);
-            setIsSnackbarVisible(true);
-          }
-    }
-    const addTvShow = async (e, type, tvshowId, posterPath, title, overview) => {
-        e.preventDefault();
-        try {
-          let response;
-          if (type === 'watched') {
-            response = await axiosClient.post('/watched-tvshows', { tvshowId, title, overview, posterPath });
-            setWatchedTvShows(response.data);
-          } else if (type === 'watching') {
-            response = await axiosClient.post('/watching-tvshows', { tvshowId, title, overview, posterPath });
-            setWatchingTvShows(response.data);
-          } else if (type === 'wantToWatch') {
-            response = await axiosClient.post('/want-to-watch-tvshows', { tvshowId, title, overview, posterPath });
-            setWantToWatchTvShows(response.data);
-          }
-          setIsSnackbarVisible(true);
-          setIsError(false);
-        } catch (error) {
-          console.error(error);
-          setIsError(true);
-          setIsSnackbarVisible(true);
-        }
-      };
     const getURL = async (url) => {
         try {
             const response = await tmbdClient.get(url)
@@ -198,53 +153,40 @@ const Search = () => {
             <aside className="sidebar">
                 <div className="sidebuttoncontainer">
                 <Button variant='contained' onClick={handleMovieList} style={{backgroundColor:'#BE3144'}} startIcon={<List />}>Movies</Button>
-                <Button onClick={handleTvShowsList} color="secondary" startIcon={<List />}>TvShows</Button>
+                <Button onClick={handleTvShowsList} color="primary" startIcon={<List />}>TvShows</Button>
                 </div>
             </aside>
             <div className="movieslist">
                 {searching ? searchResults?.map(item => (
                     <div key={item.id} className="searchmovies">
-                        <Link to={`/description/movie/${item.id}/${item.original_title}`}>
+                        <Link to={`/watch/movies/${item.id}`}>
                         {item.poster_path ? <img style={{borderRadius: '10px'}} src={`${IMG_BASE_URL_SMALL}${item.poster_path}`} alt="" /> : <img style={{width: '200px'}} src={nopfp} alt="" />}
                         </Link>
                         <div>
-                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/movie/${item.id}/${item.original_title}`}>
+                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/watch/movies/${item.id}`}>
                             <p className='searchtitle'>{item.original_title}</p>
                         </Link>    
                             <p className='searchoverview'>{item.overview}</p>
                             <div className="buttons">
-                                <form onSubmit={(e) => {addMovie(e,'watched',{id,title,overview,poster_path})}} >
-                                    <Button  value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatched</Button>
-                                </form>
-                                <form onSubmit={(e) => {addMovie(e,'watching',{id,title,overview,poster_path})}} >
-                                    <Button value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>Watching</Button>
-                                </form>
-                                <form onSubmit={(e) => {addMovie(e,'wantToWatch',{id,title,overview,poster_path})}} >
-                                    <Button value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>Want To Watch</Button>
-                                </form>
+                            <Link to={`/watch/movies/${item.id}`}> <Button type='submit' color='primary' className='watch' startIcon={<FaTv />} variant='contained' size='large'>ًWatch</Button></Link>
                             </div>
                         </div>
                     </div>
                 )) : movie?.map((item,index) => (
                         <div key={item.id} className="searchmovies">
-                            <Link to={`/description/movie/${item.id}/${item.original_title}`}>
+                            <Link to={`/watch/movies/${item.id}`}>
                                 {item.poster_path ? <img id='image' name='image' style={{borderRadius: '10px'}} src={`${IMG_BASE_URL_SMALL}${item.poster_path}`} alt="" /> : <img id='image' name='image' style={{width: '200px'}} src={nopfp} alt="" />}
                             </Link>
                             <div>
-                            <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/movie/${item.id}/${item.original_title}`}>
+                            <Link style={{textDecoration: 'none',color: 'black'}} to={`/watch/movies/${item.id}`}>
                                 <p className='searchtitle' id='title' name="title">{item.original_title}</p>
                             </Link>    
                                 <p className='searchoverview' name='overview' id='overview' >{item.overview}</p>
                                 <div className="buttons">
-                                <form onSubmit={(e) => {addMovie(e,'watched',{id,title,overview,poster_path})}} >
-                                        <Button  value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatched</Button>
-                                </form>
-                                <form onSubmit={(e) => {addMovie(e,'watching',{id,title,overview,poster_path})}} >
-                                        <Button  value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>Watching</Button>      
-                                </form>
-                                <form onSubmit={(e) => {addMovie(e,'wantToWatch',{id,title,overview,poster_path})}} >
-                                        <Button  value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>Want To Watch</Button>
-                                </form>
+                                
+                                <Link to={`/watch/movies/${item.id}`}> <Button type='submit' color='primary' className='watch' startIcon={<FaTv />} variant='contained' size='large'>ًWatch</Button></Link>
+                             
+                               
                                 </div>
                             </div>
                         </div>
@@ -252,20 +194,32 @@ const Search = () => {
             </div>
         </div>
                <Stack className='stack' spacing={2}>
-                    <Pagination onChange={changePage} count={500} color='primary'/>
+                    <Pagination onChange={changePage} count={500} color="primary" />
                 </Stack>
-                <Snackbar 
-        open={isSnackbarVisible} 
-        autoHideDuration={6000} 
-        onClose={closeSnackbar} 
-        anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center'
-        }}>
-        <SnackbarAlert onClose={closeSnackbar} severity={isError ? 'error' : 'success'}>
-          {isError ? `"${original_title}" is already in the list!` : `"${original_title}" has been added successfully!`}
-        </SnackbarAlert>
-      </Snackbar>
+                {isError ? 
+                <Snackbar open={isSnackbarVisible} 
+                          autoHideDuration={4000} 
+                          onClose={closeSnackbar} 
+                          anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center'
+                          }}>
+                    <SnackbarAlert onClose={closeSnackbar} severity='error'>
+                        Movie Already Added!
+                    </SnackbarAlert>
+                </Snackbar>
+                : <Snackbar open={isSnackbarVisible}
+                            autoHideDuration={4000}
+                            onClose={closeSnackbar} 
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'center'
+                              }}>
+                    <SnackbarAlert onClose={closeSnackbar} severity='success'>
+                        Movie Added Successfully!
+                    </SnackbarAlert>
+                </Snackbar>
+                } 
         </>
  ) 
 }
@@ -287,47 +241,31 @@ if (tvShowsList) {
         <div className="movieslist">
                 {tvSearching ? tvSearchResults?.map(item => (
                     <div key={item.id} className="searchmovies">
-                        <Link to={`/description/tv/${item.id}/${item.original_name}`}>
+                        <Link to={`/watch/tvshows/${item.id}`}>
                         {item.poster_path ? <img style={{borderRadius: '10px'}} src={`${IMG_BASE_URL_SMALL}${item.poster_path}`} alt="" /> : <img style={{width: '200px'}} src={nopfp} alt="" />}
                         </Link>
                         <div>
-                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/tv/${item.id}/${item.original_name}`}>
+                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/watch/tvshows/${item.id}`}>
                             <p className='searchtitle'>{item.original_name}</p>
                         </Link>    
                             <p className='searchoverview'>{item.overview}</p>
-                            <div className="buttons">
-                            <form onSubmit={(e) => {addTvShow(e,'watched',{id,name,overview,poster_path})}} >                       
-                                        <Button  value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatched</Button>
-                                </form>
-                                <form onSubmit={(e) => {addTvShow(e,'watching',{id,name,overview,poster_path})}} >                    
-                                        <Button value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>Watching</Button>
-                                </form>
-                                <form onSubmit={(e) => {addTvShow(e,'wantToWatch',{id,name,overview,poster_path})}} >
-                                        <Button value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>Want To Watch</Button>
-                                </form>
+                            <div className="buttons">                      
+                            <Link to={`/watch/tvshows/${item.id}`}> <Button type='submit' color='primary' className='watch' startIcon={<FaTv/>} variant='contained' size='large'>ًWatch</Button></Link>   
                             </div>
                         </div>
                     </div>
                 )) : tvShow?.map(item => (
                     <div key={item.id} className="searchmovies">
-                        <Link to={`/description/tv/${item.id}/${item.original_name}`}>
+                        <Link to={`/watch/tvshows/${item.id}`}>
                             {item.poster_path ? <img style={{borderRadius: '10px'}} src={`${IMG_BASE_URL_SMALL}${item.poster_path}`} alt="" /> : <img style={{width: '200px'}} src={nopfp} alt="" />}
                         </Link>
                         <div>
-                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/description/tv/${item.id}/${item.original_name}`}>
+                        <Link style={{textDecoration: 'none',color: 'black'}} to={`/watch/tvshows/${item.id}`}>
                             <p className='searchtitle'>{item.original_name}</p>
                         </Link>    
                             <p className='searchoverview'>{item.overview}</p>
-                            <div className="buttons">
-                            <form onSubmit={(e) => {addTvShow(e,'watched',{id,name,overview,poster_path})}} >                       
-                                        <Button  value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>ًWatched</Button>
-                                </form>
-                                <form onSubmit={(e) => {addTvShow(e,'watching',{id,name,overview,poster_path})}} >                    
-                                        <Button value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>Watching</Button>
-                                </form>
-                                <form onSubmit={(e) => {addTvShow(e,'wantToWatch',{id,name,overview,poster_path})}} >
-                                        <Button value={item.id} type='submit' color='secondary' className='watch' startIcon={<Add />} variant='contained' size='large'>Want To Watch</Button>
-                                </form>
+                            <div className="buttons">          
+                                      <Link to={`/watch/tvshows/${item.id}`}> <Button type='submit' color='primary' className='watch' startIcon={<FaTv />} variant='contained' size='large'>ًWatch</Button></Link> 
                             </div>
                         </div>
                     </div>
@@ -335,23 +273,11 @@ if (tvShowsList) {
             </div>
         </div>
                 <Stack className='stack' spacing={2}>
-                    <Pagination onChange={changeTvPage} count={500} color='primary' />
-                </Stack>
-                <Snackbar 
-        open={isSnackbarVisible} 
-        autoHideDuration={6000} 
-        onClose={closeSnackbar} 
-        anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center'
-        }}>
-        <SnackbarAlert onClose={closeSnackbar} severity={isError ? 'error' : 'success'}>
-          {isError ? `"${original_name}" is already in the list!` : `"${original_name}" has been added successfully!`}
-        </SnackbarAlert>
-      </Snackbar>
+                    <Pagination onChange={changeTvPage} count={500} color="primary" />
+                </Stack> 
         </>
     )
 }
 }
 
-export default Search
+export default PremiumSearch

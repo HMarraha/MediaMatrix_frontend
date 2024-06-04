@@ -9,7 +9,39 @@ import Welcome from '../Components/UserLayout/Welcome'
 import Search from '../Components/UserLayout/Search'
 import Description from '../Components/UserLayout/Description'
 import Profile from '../Components/UserLayout/Profile'
+import Premium from '../Components/UserLayout/Premium'
+import Assignrole from '../Components/UserLayout/Assignrole'
+import PremiumUserLayout from '../Components/PremiumUserLayout.jsx/PremiumUserLayout'
+import Welcomeprem from '../Components/PremiumUserLayout.jsx/Welcomeprem'
+import Supersearch from '../Components/PremiumUserLayout.jsx/Supersearch'
+import Watch from '../Components/PremiumUserLayout.jsx/Watch'
+import Watchmovies from '../Components/PremiumUserLayout.jsx/Watchmovies'
+import Watchtvshows from '../Components/PremiumUserLayout.jsx/Watchtvshows'
+import Srtparser from '../srtparser'
+import PremiumSearch from '../Components/PremiumUserLayout.jsx/PremiumSearch'
 const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <GuestLayout />,
+        children: [
+            {
+                path: '/',
+                element: <Navigate to="/home"/>
+            },
+            {
+                path:'/home',
+                element: <GuestHome />
+            },
+            {
+                path:'/login',
+                element: <Login />
+            },
+            {
+                path:'/signup',
+                element: <Signup />
+            },
+        ]
+    },
     {
         path: '*',
         element: <NotFound/>,
@@ -41,31 +73,75 @@ const router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile/>
-            }
+            },
+            {
+                path: '/prem',
+                element: <Premium />
+            },
+            {
+                path: '/assign',
+                element: <Assignrole/>
+            },
         ]
     },
     {
         path: '/',
-        element: <GuestLayout />,
+        element: <PremiumUserLayout/>,
         children: [
             {
                 path: '/',
-                element: <Navigate to="/home"/>
+                element: <Navigate to='/welcomeprem'/>
             },
             {
-                path:'/home',
-                element: <GuestHome />
+                path: '/welcomeprem',
+                element: <Welcomeprem/>
             },
             {
-                path:'/login',
-                element: <Login />
+                path: '/premiumdescription/movie/:id/:original_title',
+                element: <Description/>
             },
             {
-                path:'/signup',
-                element: <Signup />
+                path: '/premiumdescription/tv/:id/:original_title',
+                element: <Description/> 
             },
+            {
+                path: '/premiumprofile',
+                element: <Profile/>
+            },
+            {
+                path: '/supersearch',
+                element: <Supersearch/>
+            },
+            {
+                path: '/watch',
+                element: <Watch/>
+            },
+            {
+                path: '/watch/movies/:id',
+                element: <Watchmovies/>
+            },
+            {
+                path: '/watch/tvshows/:id',
+                element: <Watchtvshows/>
+            },
+            {
+                path:'/premium/search',
+                element: <PremiumSearch/>
+            },
+            {
+                path: '/premium/description/movie/:id/:original_title',
+                element: <Description/>
+            },
+            {
+                path: '/premium/description/tv/:id/:original_name',
+                element: <Description/>
+            },
+            {
+                path:'/srt',
+                element: <Srtparser/>
+            }
         ]
-        },
+    }
 ])
 
 export default router

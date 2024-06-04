@@ -48,18 +48,18 @@ const WelcomeNavbar = () => {
         </div>
         <ul className="buttons">
             <div>
-                <li className='premiumbutton'>Premium</li>  
+                <Link to='/prem' style={{textDecoration: 'none'}}><li className='premiumbutton'>Premium</li></Link>
             </div>
             <div onClick={handleLogout} className="profiledisplay">
                         <h1 className="profilename">{user.username}</h1>
                         <i className="profileicon"><FaPortrait radius={49} color="white" size={60}/></i>
                         <div style={logoutstyle} className="logout">
                             <Link to="/profile">
-                                <Button className="profilebtn" style={{width : '15rem',height: '3rem'}} variant="contained">Profile</Button>
+                                <Button className="profilebtn" style={{width : '15rem',height: '3rem',backgroundColor: '#BE3144'}} variant="contained">Profile</Button>
                             </Link>
-                                <Button className="signout" onClick={handleSubmit} style={{width : '15rem',marginTop: '1rem',height: '3rem'}} variant="contained">Sign out</Button>
-                                <div className="logoutinfo">
-                                    <h1 className="profilename">{user.username}</h1>
+                                <Button className="signout" onClick={handleSubmit} style={{width : '15rem',marginTop: '1rem',height: '3rem',backgroundColor:'#BE3144'}} variant="contained">Sign out</Button>
+                                <div style={{textAlign: 'center'}} className="logoutinfo">
+                                    <Link to='/assign' style={{textDecoration:'none'}}><h1 className="profilename">{user.username}</h1></Link>
                                     <p className="profileemail">{user.email}</p>
                                 </div>
                         </div>

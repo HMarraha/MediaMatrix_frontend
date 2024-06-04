@@ -27,14 +27,14 @@
   margin: auto;
   margin-top: 2vh;
   padding-block: 2rem;
-  background-color: white;
+  background-color: #141e2d;
   box-shadow: 2px 2px 5px black;
   border-radius: 10px;
-  filter: drop-shadow(8px 8px 10px gray);
   text-align: center;
 }
 .signup-form-container p {
   margin-top: 1rem;
+  color: #6c757d;
 }
 .signup-form-container img {
   width: 34%;
@@ -45,16 +45,18 @@
   font-family: "Cairo", sans-serif;
   font-weight: bold;
   font-size: 2rem;
+  color: #6c757d;
 }
 .signup-form-container .signup-form {
-  background-color: #f0f0f0;
+  background-color: #192538;
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 500px;
   margin-top: 1rem;
   border-radius: 10px;
   box-shadow: 2px 2px 5px black;
+  filter: brightness(100%);
 }
 .signup-form-container .signup-form label {
   color: #BE3144;
@@ -97,10 +99,8 @@
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  box-shadow: 2px 2px 5px black;
+  background-color: #141e2d;
   border-radius: 10px;
-  filter: drop-shadow(8px 8px 10px gray);
   text-align: center;
 }
 .login-form-container img {
@@ -111,16 +111,18 @@
   font-family: "Cairo", sans-serif;
   font-weight: bold;
   font-size: 2rem;
+  color: #6c757d;
 }
 .login-form-container .login-form {
-  background-color: #f0f0f0;
+  background-color: #192538;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px black;
+  width: 500px;
 }
 .login-form-container .login-form p {
   margin-top: 1rem;
-  color: black;
+  color: #6c757d;
 }
 .login-form-container .login-form label {
   color: #BE3144;
@@ -152,6 +154,784 @@
 }
 .login-form-container .login-button:hover {
   background-color: blue;
+}
+
+.supersearch {
+  text-align: center;
+}
+.supersearch h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 2rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.supersearch input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+.supersearch Button {
+  padding-inline: 1rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  border-radius: 4px;
+  background-color: #111926;
+  cursor: pointer;
+}
+.supersearch Button:hover {
+  background-color: #192538;
+}
+.supersearch .results {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+  text-align: center;
+}
+.supersearch .results .result-item {
+  background-color: #020916;
+  color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+}
+.supersearch .results .result-item h2 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+.supersearch .results .result-item p {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+}
+.supersearch .results .result-item img {
+  width: 15rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.supersearchchoice {
+  text-align: center;
+}
+.supersearchchoice Button {
+  background-color: #BE3144;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.movieframe {
+  text-align: center;
+}
+.movieframe img {
+  filter: brightness(60%);
+}
+.movieframe h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 2rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.movieframe p {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+
+.watchmoviesflex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  width: 100%;
+  background-color: #020916;
+  padding: 1rem;
+}
+.watchmoviesflex img {
+  width: 12.5rem;
+  border-radius: 10px;
+}
+.watchmoviesflex .movieinformation .movietitleflex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+}
+.watchmoviesflex .movieinformation .movietitleflex .watchbuttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+}
+.watchmoviesflex .movieinformation .movietitleflex h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.watchmoviesflex .movieinformation .movietitleflex Button {
+  margin-right: 1px;
+}
+.watchmoviesflex .runtimeflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.watchmoviesflex .runtimeflex .voteflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  flex-direction: row;
+}
+.watchmoviesflex p {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  font-weight: 400;
+}
+.watchmoviesflex .moviedetails .details {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+}
+
+.umayalsolike {
+  background-color: #020916;
+  color: white;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.similarflex {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+  flex-direction: row;
+  background-color: #020916;
+}
+.similarflex .similarmovies {
+  width: 50%;
+  padding: 1rem;
+}
+.similarflex .similarmovies img {
+  width: 10rem;
+  border-radius: 10px;
+}
+.similarflex .similarmovies h3 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+.episodebuttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-top: 1rem;
+  gap: 10px;
+}
+.episodebuttons .episodebutton {
+  border-radius: 30px;
+  white-space: nowrap;
+  background: #111926;
+  text-align: left;
+  line-height: 20px;
+  padding: 9px 20px;
+  color: #6c757d;
+  border: 1px solid #111926;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.episodebuttons .episodebutton:hover {
+  background-color: #192538;
+}
+.episodebuttons .selected {
+  border: 1px solid #BE3144;
+  color: #BE3144;
+}
+
+.manual-select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  background-color: #111926;
+  color: #6c757d;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.watchcontainer {
+  position: relative;
+  text-align: center;
+  padding-bottom: 30rem;
+}
+.watchcontainer .stockimage {
+  width: 100%;
+  filter: brightness(30%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.watchcontainer h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  padding-top: 7rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.watchcontainer p {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-top: 4rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.watchcontainer .watchbuttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+.watchcontainer .watchbuttons Button {
+  background-color: #6495ED;
+  color: white;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  border-radius: 10px;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 1s ease;
+  text-shadow: 2px 2px 5px black;
+}
+.watchcontainer .watchbuttons Button:hover {
+  background-color: #BE3144;
+  color: #3A4750;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 10rem;
+  flex-direction: row;
+}
+.profile .sidebar {
+  filter: drop-shadow(8px 8px 10px gray);
+  display: flex;
+  justify-content: top;
+  align-items: start;
+  gap: 0;
+  flex-direction: column;
+  width: 30%;
+  margin-right: auto;
+  margin-top: 4rem;
+  height: 50vh;
+  margin-left: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.profile .sidebar .sidebuttoncontainer {
+  width: 80%;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+.profile .sidebar .sidebuttoncontainer Button {
+  border: none;
+  padding: 1rem;
+  width: 100%;
+}
+.profile .dashboard {
+  width: 80%;
+  margin-right: 10rem;
+  margin-top: 4rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.profile .dashboard .title {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+}
+.profile .moviestvshows {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 4rem;
+  flex-direction: row;
+  padding: 2rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.profile .moviestvshows .moviesdashboard {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 2rem;
+  flex-direction: row;
+  background-color: #192538;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+.profile .moviestvshows .moviesdashboard h1 {
+  font-weight: 400;
+  color: white;
+}
+.profile .moviestvshows .moviesdashboard p {
+  color: white;
+  font-size: 1.5rem;
+}
+.profile .moviestvshows .tvshowsdashboard {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 2rem;
+  flex-direction: row;
+  background-color: #192538;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+.profile .moviestvshows .tvshowsdashboard h1 {
+  font-weight: 400;
+  color: white;
+}
+.profile .moviestvshows .tvshowsdashboard p {
+  color: white;
+  font-size: 1.5rem;
+}
+.profile .list {
+  font-size: 5rem;
+  border-radius: 10rem;
+  padding: 1rem;
+  background-color: rgb(110, 216, 230);
+  color: white;
+  margin-top: 0.5rem;
+}
+.profile .list2 {
+  font-size: 5rem;
+  border-radius: 10rem;
+  padding: 1rem;
+  background-color: orange;
+  color: white;
+  margin-top: 0.5rem;
+}
+.profile .list3 {
+  font-size: 5rem;
+  border-radius: 10rem;
+  padding: 1rem;
+  background-color: purple;
+  color: white;
+  margin-top: 0.5rem;
+}
+.profile .wlists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  padding: 2rem;
+}
+.profile .wlists .watchedlist, .profile .wlists .watchinglist, .profile .wlists .wanttowatchlist {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 2rem;
+  flex-direction: row;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 0.8rem;
+  background-color: #192538;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+.profile .wlists .watchedlist h1, .profile .wlists .watchinglist h1, .profile .wlists .wanttowatchlist h1 {
+  font-weight: 400;
+  color: white;
+}
+.profile .wlists .watchedlist p, .profile .wlists .watchinglist p, .profile .wlists .wanttowatchlist p {
+  color: white;
+  font-size: 1.5rem;
+}
+.profile .movieslist {
+  width: 90%;
+  box-shadow: 5px 5px 8px gray;
+  margin-right: 10rem;
+  margin-top: 4rem;
+  overflow-y: scroll;
+  height: 120vh;
+}
+.profile .tvshowslist {
+  width: 80%;
+  box-shadow: 5px 5px 8px gray;
+  margin-right: 10rem;
+  margin-top: 4rem;
+}
+.profile .titles {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+}
+
+.tableheads {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: auto;
+  margin-top: 2rem;
+  color: white;
+}
+.tableheads .tableheadsoverview {
+  margin-right: 19rem;
+}
+.tableheads .tableheadstitle {
+  margin-right: 28rem;
+}
+
+.addmovie {
+  width: 15%;
+  margin: auto;
+}
+
+.addedmoviedetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: white;
+  border-bottom: 1px solid black;
+  padding-bottom: 2rem;
+  margin-inline: 1rem;
+  margin-top: 2rem;
+}
+.addedmoviedetails img {
+  width: 4rem;
+}
+.addedmoviedetails .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-direction: row;
+}
+
+.nomovieadded {
+  text-align: center;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-top: 4rem;
+  color: white;
+}
+
+@media (max-width: 1550px) {
+  .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .profile .movieslist {
+    width: 80%;
+    margin: 2rem auto;
+  }
+  .profile .sidebar {
+    width: 80%;
+    margin: 2rem auto;
+    height: auto;
+  }
+  .profile .sidebar .sidebuttoncontainer {
+    width: 50%;
+    margin: 2rem auto;
+  }
+  .profile .dashboard {
+    width: 80%;
+    margin: 2rem auto;
+  }
+}
+@media (max-width: 1150px) {
+  .profile .moviestvshows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .profile .moviestvshows .moviesdashboard, .profile .moviestvshows .tvshowsdashboard {
+    width: 100%;
+  }
+  .profile .wlists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .profile .wlists .watchinglist, .profile .wlists .watchedlist, .profile .wlists .wanttowatchlist {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    gap: 2rem;
+    flex-direction: row;
+    font-family: "Cairo", sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+}
+@media (max-width: 505px) {
+  .profile .sidebar .sidebuttoncontainer {
+    width: 90%;
+  }
+  .profile .moviestvshows .moviesdashboard, .profile .moviestvshows .tvshowsdashboard {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    gap: 1rem;
+    flex-direction: row;
+    font-family: "Cairo", sans-serif;
+    font-weight: bold;
+    font-size: 0.6rem;
+  }
+  .profile .wlists .watchinglist, .profile .wlists .watchedlist, .profile .wlists .wanttowatchlist {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    gap: 1rem;
+    flex-direction: row;
+    font-family: "Cairo", sans-serif;
+    font-weight: bold;
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: 1225px) {
+  .addmovie {
+    width: 50%;
+  }
+  .addedmoviedetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .tableheads {
+    display: none;
+  }
+}
+.premimgcontainer {
+  position: relative;
+}
+.premimgcontainer .premimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40rem;
+  filter: brightness(40%);
+  z-index: -1;
+}
+.premimgcontainer .premimgtxt {
+  z-index: 999;
+  text-align: center;
+  padding-top: 10rem;
+}
+.premimgcontainer .premimgtxt h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  color: white;
+}
+.premimgcontainer .premimgtxt p {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+}
+.premimgcontainer button {
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #BE3144;
+  color: white;
+  border-radius: 10px;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 3rem;
+  text-shadow: 2px 2px 3px black;
+  border: 1px solid #BE3144;
+}
+
+.benefits {
+  text-align: center;
+  margin-top: 20rem;
+}
+.benefits h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+}
+.benefits .benefitsflex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+  width: 60%;
+  margin: auto;
+  margin-top: 2rem;
+}
+.benefits .benefitsflex .benefit {
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px black;
+  background-color: #3A4750;
+  padding: 1rem;
+}
+.benefits .benefitsflex .benefit p {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+.benefits .streaminglogos {
+  margin-top: 2rem;
+}
+
+.plans {
+  text-align: center;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+}
+
+.prices {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: row;
+}
+.prices .pricing {
+  border: 5px solid #BE3144;
+  border-radius: 10px;
+  background-color: #192538;
+  text-align: center;
+  padding: 3rem;
+}
+.prices .pricing h1 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+}
+.prices .pricing h2 {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+.prices .pricing p {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #BE3144;
+  text-shadow: 2px 2px 5px black;
+}
+.prices .pricing ul {
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-block: 1rem;
+  color: white;
+}
+.prices .pricing button {
+  background-color: #BE3144;
+  color: black;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  font-family: "Cairo", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .backdropimage {
@@ -667,6 +1447,7 @@
   font-size: 2rem;
   width: 20%;
   margin: 2rem auto;
+  color: white;
 }
 
 .searchmovies {
@@ -683,11 +1464,13 @@
   font-family: "Cairo", sans-serif;
   font-weight: bold;
   font-size: 1.25rem;
+  color: white;
 }
 .searchmovies .searchoverview {
   font-family: "Cairo", sans-serif;
   font-weight: bold;
   font-size: 1rem;
+  color: white;
 }
 .searchmovies .buttons {
   display: flex;
@@ -699,10 +1482,10 @@
 }
 .searchmovies .buttons Button {
   margin-left: 2rem;
+  background-color: #BE3144;
 }
 
 .sidebar {
-  filter: drop-shadow(8px 8px 10px gray);
   display: flex;
   justify-content: top;
   align-items: start;
@@ -713,6 +1496,7 @@
   margin-top: 4rem;
   height: 50vh;
   margin-left: 2rem;
+  background-color: #192538;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .sidebar .sidebuttoncontainer {
@@ -724,6 +1508,7 @@
   border: none;
   padding: 1rem;
   width: 100%;
+  color: #D3D6DB;
 }
 
 .stack {
@@ -739,11 +1524,13 @@
 }
 .searchformovie .searchinput {
   width: 80%;
+  background-color: white;
 }
 .searchformovie .searchbutton {
   margin-left: 2rem;
   min-height: 3.4rem;
   padding-inline: 2rem;
+  background-color: #BE3144;
 }
 
 .success {
@@ -861,14 +1648,12 @@
   max-width: 70%;
   margin: 2rem auto;
   text-align: center;
-  filter: drop-shadow(8px 8px 10px gray);
 }
 .faq-container .question-container {
-  border: 1px solid gray;
+  border: 1px solid #BE3144;
   border-radius: 10px;
   padding-block: 2rem;
   margin-top: 2rem;
-  box-shadow: 8px 8px 10px gray;
 }
 .faq-container .question-container .question {
   display: flex;
@@ -880,6 +1665,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   padding-inline: 2rem;
+  color: #BE3144;
 }
 .faq-container .question-container .answer {
   font-family: "Karla", sans-serif;
@@ -890,6 +1676,7 @@
   text-align: start;
   transition: all 1s cubic-bezier(1, 0, 1, 0);
   display: block;
+  color: #BE3144;
 }
 .faq-container .question-container .noanswer {
   font-family: "Karla", sans-serif;
@@ -900,6 +1687,7 @@
   text-align: start;
   transition: all 1s cubic-bezier(0, 1, 0, 1);
   display: none;
+  color: #BE3144;
 }
 
 .moviecardscontainer {
@@ -907,10 +1695,25 @@
   margin: auto;
   margin-top: 2rem;
 }
-.moviecardscontainer h1 {
+.moviecardscontainer .headline {
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+}
+.moviecardscontainer .headline .redbar {
+  padding-block: 2rem;
+  padding-inline: 0.2rem;
+  background-color: #BE3144;
+}
+.moviecardscontainer .headline h1 {
   font-family: "Cairo", sans-serif;
   font-weight: bold;
   font-size: 2rem;
+  color: white;
 }
 .moviecardscontainer .moviebuttons {
   margin-left: 1rem;
@@ -950,6 +1753,7 @@
   font-weight: bold;
   font-size: 1rem;
   text-decoration: none;
+  color: white;
 }
 .moviecardscontainer .card .moviecard .release {
   font-family: "Cairo", sans-serif;
@@ -957,6 +1761,7 @@
   font-size: 0.9rem;
   font-weight: 400;
   text-decoration: none;
+  color: white;
 }
 
 .btn-container {
@@ -1009,7 +1814,6 @@
   align-items: center;
   gap: 5px;
   flex-direction: row;
-  box-shadow: 2px 2px 5px black;
   border-radius: 10px;
   cursor: pointer;
   padding: 0.5rem 2rem;
@@ -1043,7 +1847,7 @@
   font-family: "Karla", sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
-  color: white;
+  color: #BE3144;
   text-shadow: 2px 2px 5px black;
 }
 
@@ -1055,12 +1859,21 @@
   color: white;
 }
 
+.premiumbuttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: row;
+  margin-right: 10rem;
+}
+
 .footer-container {
+  text-align: center;
+  background: #192538;
+  width: 100%;
   margin-top: 2rem;
   max-width: 100%;
-  text-align: center;
-  background: linear-gradient(#3A4750, #BE3144);
-  width: 100%;
 }
 .footer-container .logo {
   width: 40%;
@@ -1072,6 +1885,7 @@
   gap: 10rem;
   flex-direction: row;
   padding: 6rem;
+  margin-right: 5rem;
 }
 .footer-container .content-container h1 {
   font-family: "Cairo", sans-serif;
@@ -1180,6 +1994,7 @@
   font-family: "Cairo", sans-serif;
   font-weight: bold;
   font-size: 2rem;
+  color: white;
 }
 .latestcontainer .cards {
   background-image: url("../../assets/download.jpg");
@@ -1214,6 +2029,7 @@
   font-weight: bold;
   font-size: 1rem;
   text-decoration: none;
+  color: white;
 }
 .latestcontainer .cards .moviecards .release {
   font-family: "Cairo", sans-serif;
@@ -1221,6 +2037,7 @@
   font-size: 0.9rem;
   font-weight: 400;
   text-decoration: none;
+  color: white;
 }
 
 .upcoming {
@@ -1234,7 +2051,7 @@ main {
 }
 
 .welcomehero {
-  background-image: linear-gradient(#3A4750, #BE3144), url(../../assets/download.jpg);
+  background-image: url(../../assets/download.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -1294,7 +2111,7 @@ main {
   padding-inline: 5rem;
   padding-block: 2rem;
   box-shadow: 2px 2px 5px;
-  background-color: #D3D6DB;
+  background-color: #192538;
 }
 .navbar img {
   width: 30%;
@@ -1370,5 +2187,5 @@ html {
 }
 
 body {
-  background-color: #D3D6DB;
+  background-color: #020916;
 }/*# sourceMappingURL=index.css.map */

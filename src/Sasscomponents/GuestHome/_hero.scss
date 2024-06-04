@@ -4,7 +4,7 @@ main  {
     text-align: center;
 }
 .welcomehero {
-    background-image: linear-gradient($firstgray,$red), url(../../assets/download.jpg);
+    background-image: url(../../assets/download.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -19,7 +19,7 @@ main  {
         h1 {
             @include font(($primaryFont,$backupFont),2.5rem);
             @include textdeco();
-            text-align: center
+            text-align: center;
         }
         p {
             @include font(($primaryFont,$backupFont),1.5rem);

@@ -22,7 +22,7 @@ const Footer = () => {
       </div>
       <div className="copyright">
         <i><FaCopyright size='1.5rem' color='white'/></i>
-        <h1>All rights reserved, MyMoviesList 2023</h1>
+        <h1>All rights reserved, MediaMatrix 2024</h1>
       </div>
     </div>
   </>
